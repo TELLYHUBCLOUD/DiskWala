@@ -69,7 +69,7 @@ export default function RootLayout({ children }) {
         <div className="analytics">
           <div dangerouslySetInnerHTML={{__html: analytics}}></div>
         </div>
-        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossorigin="anonymous"></Script>
+        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4291572749420740" crossorigin="anonymous"></Script>
         <div dangerouslySetInnerHTML={{ __html: jsonld }}></div>
       </head>
       <body className={inter.className}>{children}</body>
