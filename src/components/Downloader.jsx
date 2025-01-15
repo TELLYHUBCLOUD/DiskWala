@@ -129,9 +129,6 @@ const Downloader = () => {
 };
 
 export default Downloader;
-
-
-export default Downloader;
 // Render the TeraboxScriptSection component correctly
 const TeraboxScriptSection = () => {
   return (
