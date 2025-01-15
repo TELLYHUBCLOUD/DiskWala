@@ -70,7 +70,13 @@ const Downloader = () => {
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
         </div>
-
+      {/* Ad Code */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
+        }}
+      />
+      {/* End of Ad Code */}
         <div className="bg-white backdrop-blur-lg rounded-2xl p-1 shadow-xl border border-slate-700">
           <div className="relative">
             <input
