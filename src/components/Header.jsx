@@ -21,7 +21,7 @@ export function Header() {
           >
             <YoutubeIcon className="w-8 h-8 text-red-500" />
             <span className="text-lg font-bold bg-gradient-to-r from-white to-white/70 bg-clip-text text-transparent">
-              TeraBox.tech
+              PlayTerabox
             </span>
           </Link>
 
