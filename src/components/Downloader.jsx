@@ -174,6 +174,8 @@ const handleWatchVideo = () => {
     </div>
   );
 };
+
+export default Downloader;
         {/* Ad Code */}
         <div
           dangerouslySetInnerHTML={{
@@ -182,8 +184,6 @@ const handleWatchVideo = () => {
           }}
         />
         {/* End of Ad Code */}
-export default Downloader;
-
 // Render the TeraboxScriptSection component correctly
 const TeraboxScriptSection = () => {
   return (
