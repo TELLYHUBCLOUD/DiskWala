@@ -1,26 +1,27 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
- import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
-  title: "Terabox Video Player, Embed, Download Terabox videos free",
-  description: "Watch, Embed and download Terabox Videos 🔥 100% working ✅ Download Terabox videos with TeraDL",
-  keywords: ["terabox", "terabox direct download", "terabox downloader", "terabox online downloader", "terabox player", "terabox online player", "terabox links", "terabox link converter", "terabox direct link", "terabox direct videos", "terabox direct files", "terabox bypass", "terabox link bypass", "terabox video downloader", "terabox video download", "terabox link downloader", "terabox downloader online"],
-  authors: [{ name: "Terabox.tech" }],
+  title: "PlayTerabox: Video Downloader, Player, Embed Videos, No login",
+  description: "Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!",
+  keywords: ["terabox", "terabox video downloader online", "terabox direct download", "terabox downloader", "terabox online downloader", "terabox video downloader", "terabox player", "terabox online player", "terabox links", "terabox link converter", "terabox direct link", "terabox direct videos", "terabox direct files", "terabox bypass", "terabox link bypass", "terabox video downloader", "terabox video download", "terabox link downloader", "terabox downloader online"],
+  authors: [{ name: "Playterabox.com" }],
   robots: "index, follow",
   openGraph: {
-    title: "Terabox Video Player, Embed, Download Terabox videos",
-    description: "Watch, Embed and download Terabox Videos 🔥 100% working ✅ Download Terabox videos with TeraDL",
+    title: "PlayTerabox: Video Downloader, Player, Embed Videos, No login",
+    description: "Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!",
     type: "website",
     images: "./og.png",
-    url: "https://terabox.tech",
-    siteName: "Terabox.tech",
+    url: "https://playterabox.com",
+    siteName: "Playterabox.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Terabox.tech Player, Embed, Download Terabox videos",
-    description: "Watch, Embed and download Terabox Videos 🔥 100% working ✅ Download Terabox videos with TeraDL",
+    title: "PlayTerabox.com Video Downloader, Player, Embed Videos, No login",
+    description: "Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!",
     images: "./og.png",
     site: "@microsoft",
   },
@@ -28,13 +29,13 @@ export const metadata = {
 
 let analytics = `
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-12EDBKJZQ3"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GQQKJ4TV2K"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-12EDBKJZQ3');
+  gtag('config', 'G-GQQKJ4TV2K');
 </script>`;
 
 const jsonld = `
@@ -42,12 +43,12 @@ const jsonld = `
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Terabox.tech",
-  "url": "https://terabox.tech",
+  "name": "Playterabox.com",
+  "url": "https://playterabox.com",
   "description": "Watch, Embed and download Terabox Videos 🔥 100% working ✅ Download Terabox videos with TeraDL",
   "publisher": {
     "@type": "Organization",
-    "name": "Terabox.tech"
+    "name": "Playterabox.com"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
