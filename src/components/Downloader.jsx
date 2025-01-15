@@ -102,6 +102,121 @@ const Downloader = () => {
               >
                 <span className="flex items-center justify-center gap-2">Share Link</span>
               </button>
+        "use client";
+
+import { useState, useEffect, Suspense } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+
+const Downloader = () => {
+  const router = useRouter();
+  const [inputUrl, setInputUrl] = useState("");
+
+  const SearchParamsWrapper = () => {
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+      const url = searchParams.get("url");
+      if (url) {
+        setInputUrl(decodeURIComponent(url));
+      }
+    }, [searchParams]);
+
+    return null;
+  };
+
+  const handleUrlChange = (e) => {
+    const url = e.target.value;
+    setInputUrl(url); // Update state first to allow input changes
+    if (isValidUrl(url)) {
+      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
+      router.push(newUrl); // Update the URL only if valid
+      const id = url.split("/")[4];
+      fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
+    }
+  };
+
+  const copyShareLink = () => {
+    const currentUrl = `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
+    navigator.clipboard
+      .writeText(currentUrl)
+      .then(() => alert("Share link copied to clipboard"))
+      .catch((err) => console.error("Error copying share link:", err));
+  };
+
+  const copyEmbedCode = () => {
+    const embedCode = `<iframe src="${window.location.origin}/play.html?url=${encodeURIComponent(inputUrl)}" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>`;
+    navigator.clipboard
+      .writeText(embedCode)
+      .then(() => alert("Embed code copied to clipboard"))
+      .catch((err) => console.error("Error copying embed code:", err));
+  };
+
+  const isValidUrl = (url) => {
+    if (!url) return true; // Allow empty input
+    if (!url.startsWith("http://") && !url.startsWith("https://")) return false;
+    try {
+      new URL(url);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-white from-black-400 to-white-600 text-black p-6">
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchParamsWrapper />
+      </Suspense>
+      {/* Ad Code */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
+        }}
+      />
+      {/* End of Ad Code */}
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl font-extrabold mb-6 text-center bg-white text-blue-600 rounded-lg shadow-lg p-4">
+            PlayTerabox Video Downloader, Player, Embed Videos
+          </h1>
+          <p className="text-lg text-gray-700 mb-6">
+            Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
+          </p>
+        </div>
+
+        <div className="bg-white backdrop-blur-lg rounded-2xl p-1 shadow-xl border border-slate-700">
+          <div className="relative">
+            <input
+              id="input-url"
+              type="text"
+              value={inputUrl}
+              onChange={handleUrlChange}
+              placeholder="Paste your Terabox URL here"
+              className="w-full bg-white text-blue-600/text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+            />
+          </div>
+        </div>
+
+        {inputUrl && (
+          <>
+            <div className="grid gap-4 md:grid-cols-2">
+              <button
+                onClick={copyEmbedCode}
+                className="group relative px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  Copy Embed Code
+                </span>
+              </button>
+
+              <button
+                onClick={copyShareLink}
+                className="group relative px-6 py-3 bg-violet-600 hover:bg-violet-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-violet-500/25"
+              >
+                <span className="flex items-center justify-center gap-2">
+                  Share Link
+                </span>
+              </button>
             </div>
 
             <div className="bg-slate-white">
@@ -124,6 +239,7 @@ const Downloader = () => {
           </>
         )}
       </div>
+      <TeraboxScriptSection /> {/* Include the component */}
     </div>
   );
 };
