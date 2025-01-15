@@ -2,21 +2,21 @@
 
 export default function Footer() {
   return (
-    <div className="min-h-screen">
+    <div>
       {/* Desktop View */}
       <div className="hidden lg:flex flex-col">
         {/* Footer */}
         <footer className="bg-slate-900/50 backdrop-blur-sm border-t border-white/5">
           <div className="max-w-7xl mx-auto px-8 py-6">
-            <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-slate-400">
+            <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-slate-900">
               {[
-                ['Privacy Policy', '/privacy'],
-                ['About Us', '/about'],
-                ['Terms of Service', '/tos'],
-                ['Contact', '/contact'],
-                ['DMCA', '/dmca'],
+                ["Privacy Policy", "/privacy"],
+                ["About Us", "/about"],
+                ["Terms of Service", "/tos"],
+                ["Contact", "/contact"],
+                ["DMCA", "/dmca"],
               ].map(([title, url]) => (
-                <a 
+                <a
                   key={title}
                   href={url}
                   className="hover:text-white transition-colors duration-200"
@@ -29,8 +29,8 @@ export default function Footer() {
         </footer>
       </div>
 
-      {/* Mobile View */} 
-      <div className="lg:hidden min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 px-4 py-12">
+      {/* Mobile View */}
+      <div className="lg:hidden px-4 py-12">
         {/* Similar mobile content with adjusted styling */}
       </div>
     </div>
