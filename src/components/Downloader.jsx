@@ -10,22 +10,23 @@ const Downloader = () => {
   const SearchParamsWrapper = () => {
     const searchParams = useSearchParams();
 
-    useEffect(() => {
-      const url = searchParams.get("url");
-      if (url) {
-        setInputUrl(decodeURIComponent(url));
-      }
-    }, [searchParams]);
-
-    return null;
-  };
+  useEffect(() => {
+    // Check URL parameters on client side
+    const url = searchParams.get("url");
+    if (url) {
+      setInputUrl(decodeURIComponent(url)); // Decode the URL parameter
+    }
+  }, [searchParams]);
 
   const handleUrlChange = (e) => {
     const url = e.target.value;
-    setInputUrl(url); // Always update the state first
+    setInputUrl(url);
+    // Update the URL with the input URL parameter only if valid
     if (isValidUrl(url)) {
-      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
-      router.push(newUrl); // Update the URL only for valid inputs
+      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(
+        url
+      )}`;
+      router.push(newUrl);
       let id = url.split("/")[4];
       fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
     }
