@@ -18,10 +18,6 @@ const Content = () => {
     <>
       <div>
         <p className=" p-1 m-2 ">
-          <h1 className=" text-4xl">About and Policy for Playterabox.com</h1>
-        </p>
-        <p className=" p-1 m-2 ">
-          <h1>playterabox.com provides a terabox video downloader</h1>
           At playterabox.com, accessible from{" "}
           <a href="https://playterabox.com">https://playterabox.com</a>, one of our
           main priorities is the privacy of our visitors. This Privacy Policy
