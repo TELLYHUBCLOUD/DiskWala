@@ -13,11 +13,12 @@ const Downloader = () => {
 
     useEffect(() => {
       const url = searchParams.get("url");
-      if (url && !videoUrl) { // Prevent overwriting if a video is already loaded
+      if (url && !videoUrl) {
+        // Prevent overwriting if a video is already loaded
         setInputUrl(decodeURIComponent(url));
       }
     }, [searchParams, videoUrl]);
-  
+
     return null;
   };
 
@@ -31,7 +32,7 @@ const Downloader = () => {
       router.push(newUrl); // Update the URL
       const id = inputUrl.split("/")[4];
       fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
-  
+
       setVideoUrl(inputUrl); // Set the video URL to trigger iframe rendering
       setInputUrl(""); // Clear the input box after setting the video URL
     } else {
@@ -93,7 +94,7 @@ const Downloader = () => {
             <input
               id="input-url"
               type="text"
-              value={inputUrl} // Input value is independent of video rendering
+              value={inputUrl}
               onChange={handleUrlChange}
               placeholder="Paste your Terabox URL here"
               className="w-full bg-white text-blue-600/text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
@@ -109,23 +110,8 @@ const Downloader = () => {
 
         {videoUrl && (
           <div className="space-y-4">
-            <div className="grid gap-4 md:grid-cols-2">
-              <button
-                onClick={copyEmbedCode}
-                className="group relative px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
-              >
-                Copy Embed Code
-              </button>
-
-              <button
-                onClick={copyShareLink}
-                className="group relative px-6 py-3 bg-violet-600 hover:bg-violet-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-violet-500/25"
-              >
-                Share Link
-              </button>
-            </div>
-
             <div className="bg-slate-white">
+              {/* Video iframe */}
               <iframe
                 src={`https://player.terabox.tech/?url=${encodeURIComponent(videoUrl)}`}
                 className="w-full aspect-video rounded-lg"
@@ -133,14 +119,44 @@ const Downloader = () => {
                 allowFullScreen
                 scrolling="no"
               />
+            </div>
+
+            {/* Buttons below the video */}
+            <div className="space-y-4">
+              <button
+                className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
+                onClick={() => {
+                  // Placeholder for ad link functionality
+                  alert("https://www.profitablecpmrate.com/ffh9hsd52?key=5d61b42be252572d45b9bceaf0a155ae");
+                }}
+              >
+                Download Now
+              </button>
+
               <a
                 href={`https://player.terabox.tech/?url=${encodeURIComponent(videoUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 block text-center px-6 py-3 bg-green-600 hover:bg-green-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-green-500/25"
+                className="block text-center px-6 py-3 bg-green-600 hover:bg-green-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-green-500/25"
               >
                 Open Full-Screen Video
               </a>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                <button
+                  onClick={copyEmbedCode}
+                  className="group relative px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
+                >
+                  Copy Embed Code
+                </button>
+
+                <button
+                  onClick={copyShareLink}
+                  className="group relative px-6 py-3 bg-violet-600 hover:bg-violet-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-violet-500/25"
+                >
+                  Share Link
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -151,6 +167,7 @@ const Downloader = () => {
 };
 
 export default Downloader;
+
 // Render the TeraboxScriptSection component correctly
 const TeraboxScriptSection = () => {
   return (
