@@ -61,6 +61,13 @@ const Downloader = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <SearchParamsWrapper />
       </Suspense>
+            {/* Ad Code */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
+        }}
+      />
+      {/* End of Ad Code */}
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-extrabold mb-6 text-center bg-white text-blue-600 rounded-lg shadow-lg p-4">
@@ -70,13 +77,7 @@ const Downloader = () => {
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
         </div>
-      {/* Ad Code */}
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
-        }}
-      />
-      {/* End of Ad Code */}
+        
         <div className="bg-white backdrop-blur-lg rounded-2xl p-1 shadow-xl border border-slate-700">
           <div className="relative">
             <input
