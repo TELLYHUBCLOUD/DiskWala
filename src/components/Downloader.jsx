@@ -84,7 +84,13 @@ const isValidUrl = (url) => {
             />
           </div>
         </div>
-
+      {/* Ad Code */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
+        }}
+      />
+      {/* End of Ad Code */}
         {inputUrl && (
           <>
             <div className="grid gap-4 md:grid-cols-2">
