@@ -92,14 +92,6 @@ const handleWatchVideo = () => {
           </p>
         </div>
         {/* Ad Code */}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<script async="async" data-cfasync="false" src="//pl25580720.profitablecpmrate.com/dc64d153a059c9dd24df1ab292ff7c95/invoke.js"></script>
-<div id="container-dc64d153a059c9dd24df1ab292ff7c95"></div>`,
-          }}
-        />
-        {/* End of Ad Code */}
-        {/* Ad Code */}
         <div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>
         {/* End of Ad Code */}
         <div className="bg-white backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-slate-700">
