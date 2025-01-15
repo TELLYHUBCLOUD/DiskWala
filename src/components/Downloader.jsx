@@ -46,7 +46,7 @@ const Downloader = () => {
   };
 
   const isValidUrl = (url) => {
-    if (!url) return true; // Allow empty input
+    // Allow partial URLs while typing to avoid interrupting user input
     if (!url.startsWith("http://") && !url.startsWith("https://")) return false;
     try {
       new URL(url);
