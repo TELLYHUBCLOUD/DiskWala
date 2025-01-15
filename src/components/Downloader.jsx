@@ -127,7 +127,7 @@ const Downloader = () => {
                 className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
                 onClick={() => {
                   // Placeholder for ad link functionality
-                  alert("https://www.profitablecpmrate.com/ffh9hsd52?key=5d61b42be252572d45b9bceaf0a155ae");
+                  window.open("https://www.profitablecpmrate.com/ffh9hsd52?key=5d61b42be252572d45b9bceaf0a155ae");
                 }}
               >
                 Download Now
