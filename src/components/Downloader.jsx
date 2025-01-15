@@ -60,7 +60,7 @@ const Downloader = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-black-400 to-white-600 text-black p-6">
       <Suspense fallback={<div>Loading...</div>}>
         <SearchParamsWrapper />
       </Suspense>
