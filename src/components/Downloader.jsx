@@ -139,33 +139,7 @@ const isValidUrl = (url) => {
 
 export default Downloader;
 
-export function DisqusComments() {
-  return (
-    <div>
-      <div id="disqus_thread" />
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-          var disqus_config = function () {
-            this.page.url = window.location.href;
-            this.page.identifier = window.location.pathname;
-          };
-          (function() {
-            var d = document, s = d.createElement('script');
-            s.src = 'https://terabox-1.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-          })();
-        `,
-        }}
-      />
-      <noscript>
-        Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-      </noscript>
-      <script id="dsq-count-scr" src="//terabox-1.disqus.com/count.js" async></script>
-    </div>
-  );
-}
+import React from "react";
 
 const TeraboxScriptSection = () => {
   return (
