@@ -66,11 +66,11 @@ const Downloader = () => {
       </Suspense>
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-4">
-          <h1 className="text-5xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-400">
-            Terabox Video Downloader
+          <h1 className="text-4xl font-extrabold mb-6 text-center bg-white text-blue-600 rounded-lg shadow-lg p-4">
+            PlayTerabox Video Downloader, Player, Embed Videos
           </h1>
-          <p className="text-slate-400 text-lg">
-            Download, embed and share Terabox videos seamlessly
+          <p className="text-lg text-gray-700 mb-6">
+            Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
         </div>
 
@@ -82,11 +82,17 @@ const Downloader = () => {
               value={inputUrl}
               onChange={handleUrlChange}
               placeholder="Paste your Terabox URL here"
-              className="w-full bg-slate-900/50 text-white placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+              className="w-2/4 h-14 bg-slate-900/50 text-white placeholder-white rounded-xl px-6 py-4 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
             />
           </div>
         </div>
-
+      {/* Ad Code */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
+        }}
+      />
+      {/* End of Ad Code */}
         {inputUrl && (
           <>
             <div className="grid gap-4 md:grid-cols-2">
