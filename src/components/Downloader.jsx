@@ -26,19 +26,28 @@ const Downloader = () => {
     setInputUrl(e.target.value); // Update the state for input value
   };
 
-  const handleWatchVideo = () => {
-    if (isValidUrl(inputUrl)) {
-      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
-      router.push(newUrl); // Update the URL
-      const id = inputUrl.split("/")[4];
-      fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
+const handleWatchVideo = () => {
+  if (isValidUrl(inputUrl)) {
+    const newUrl = `${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
+    router.push(newUrl); // Update the URL
+    const id = inputUrl.split("/")[4];
+    fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
 
-      setVideoUrl(inputUrl); // Set the video URL to trigger iframe rendering
-      setInputUrl(""); // Clear the input box after setting the video URL
-    } else {
-      alert("Please enter a valid URL.");
-    }
-  };
+    setVideoUrl(inputUrl); // Set the video URL to trigger iframe rendering
+    setInputUrl(""); // Clear the input box after setting the video URL
+
+    // Wait for the video iframe to be rendered and then scroll to it
+    setTimeout(() => {
+      const iframeElement = document.querySelector("iframe");
+      if (iframeElement) {
+        iframeElement.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 100); // Small delay to ensure the iframe is rendered
+  } else {
+    alert("Please enter a valid URL.");
+  }
+};
+
 
   const copyShareLink = () => {
     const currentUrl = `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(videoUrl)}`;
