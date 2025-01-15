@@ -58,7 +58,7 @@ const isValidUrl = (url) => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-black-400 to-white-600 text-black p-6">
+    <div className="min-h-screen bg-white from-black-400 to-white-600 text-black p-6">
       <Suspense fallback={<div>Loading...</div>}>
         <SearchParamsWrapper />
       </Suspense>
@@ -84,13 +84,7 @@ const isValidUrl = (url) => {
             />
           </div>
         </div>
-      {/* Ad Code */}
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
-        }}
-      />
-      {/* End of Ad Code */}
+
         {inputUrl && (
           <>
             <div className="grid gap-4 md:grid-cols-2">
