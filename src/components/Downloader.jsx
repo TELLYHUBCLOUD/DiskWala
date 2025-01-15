@@ -118,7 +118,7 @@ const Downloader = () => {
               </button>
             </div>
 
-            <div className="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-slate-700">
+            <div className="bg-slate-white">
               <iframe
                 src={`https://player.terabox.tech/?url=${encodeURIComponent(inputUrl)}`}
                 className="w-full aspect-video rounded-lg"
