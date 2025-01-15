@@ -226,7 +226,7 @@ const TeraboxScriptSection = () => {
         <p className="text-lg text-gray-700 mb-6">
           <strong>Step 2: Paste the Link:</strong> Visit Playterabox.com and paste the link into the input field.
         </p>
-        <div className="text-center mb-8"><img src="https://tgpaste.me/wp-content/uploads/2025/01/photo_2025-01-16_02-26-56.jpg" alt="Paste the Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
+        <div className="text-center mb-8"><img src="https://tgpaste.me/wp-content/uploads/2025/01/Paste.jpg" alt="Paste the Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
         <p className="text-lg text-gray-700 mb-6">
           <strong>Step 3: Play or Download:</strong> Click On Watch Now Button. The Video starts playing below, You can also download the video.
         </p>
