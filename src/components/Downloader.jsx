@@ -20,19 +20,23 @@ const Downloader = () => {
     return null;
   };
 
-  const handleUrlChange = (e) => {
-    const url = e.target.value;
-    setInputUrl(url);
-    // Update the URL with the input URL parameter only if valid
-    if (isValidUrl(url)) {
-      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(
-        url
-      )}`;
+const handleUrlChange = (e) => {
+  const url = e.target.value;
+  setInputUrl(url);
+
+  // Delay router updates to prevent interference with typing
+  if (isValidUrl(url)) {
+    const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
+    // Use a timeout to ensure smooth typing experience
+    clearTimeout(window.urlUpdateTimeout);
+    window.urlUpdateTimeout = setTimeout(() => {
       router.push(newUrl);
       let id = url.split("/")[4];
       fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
-    }
-  };
+    }, 300); // Adjust debounce time if needed
+  }
+};
+
 
   const copyShareLink = () => {
     const currentUrl = `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
