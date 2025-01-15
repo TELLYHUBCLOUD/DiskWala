@@ -22,21 +22,14 @@ const Downloader = () => {
 
 const handleUrlChange = (e) => {
   const url = e.target.value;
-  setInputUrl(url);
-
-  // Delay router updates to prevent interference with typing
+  setInputUrl(url); // Always update the state first
   if (isValidUrl(url)) {
     const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
-    // Use a timeout to ensure smooth typing experience
-    clearTimeout(window.urlUpdateTimeout);
-    window.urlUpdateTimeout = setTimeout(() => {
-      router.push(newUrl);
-      let id = url.split("/")[4];
-      fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
-    }, 300); // Adjust debounce time if needed
+    router.push(newUrl); // Update the URL only for valid inputs
+    let id = url.split("/")[4];
+    fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
   }
 };
-
 
   const copyShareLink = () => {
     const currentUrl = `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
@@ -52,14 +45,17 @@ const handleUrlChange = (e) => {
       .catch((err) => console.error("Error copying embed code:", err));
   };
 
-  const isValidUrl = (url) => {
-    try {
-      new URL(url);
-      return true;
-    } catch (_) {
-      return false;
-    }
-  };
+const isValidUrl = (url) => {
+  if (!url) return true; // Allow empty input
+  if (!url.startsWith("http://") && !url.startsWith("https://")) return false;
+  try {
+    new URL(url);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-black-400 to-white-600 text-black p-6">
