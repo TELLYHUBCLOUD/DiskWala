@@ -14,7 +14,8 @@ const Downloader = () => {
     useEffect(() => {
       const url = searchParams.get("url");
       if (url && !videoUrl) {
-        setInputUrl(decodeURIComponent(url)); // Prevent overwriting if video is loaded
+        // Prevent overwriting if a video is already loaded
+        setInputUrl(decodeURIComponent(url));
       }
     }, [searchParams, videoUrl]);
 
@@ -22,21 +23,26 @@ const Downloader = () => {
   };
 
   const handleUrlChange = (e) => {
-    setInputUrl(e.target.value);
+    setInputUrl(e.target.value); // Update the state for input value
   };
 
   const handleWatchVideo = () => {
     if (isValidUrl(inputUrl)) {
       const newUrl = `${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
-      router.push(newUrl);
-      setVideoUrl(inputUrl);
-      setInputUrl("");
+      router.push(newUrl); // Update the URL
+      const id = inputUrl.split("/")[4];
+      fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
 
-      // Scroll to video
+      setVideoUrl(inputUrl); // Set the video URL to trigger iframe rendering
+      setInputUrl(""); // Clear the input box after setting the video URL
+
+      // Wait for the video iframe to be rendered and then scroll to it
       setTimeout(() => {
         const iframeElement = document.querySelector("iframe");
-        if (iframeElement) iframeElement.scrollIntoView({ behavior: "smooth", block: "center" });
-      }, 100);
+        if (iframeElement) {
+          iframeElement.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 100); // Small delay to ensure the iframe is rendered
     } else {
       alert("Please enter a valid URL.");
     }
@@ -80,7 +86,8 @@ const Downloader = () => {
     // Ad 2
     const adContainer2 = document.getElementById("ad-container-2");
     if (adContainer2) {
-      adContainer2.innerHTML = `<script async="async" data-cfasync="false" src="//pl25580720.profitablecpmrate.com/dc64d153a059c9dd24df1ab292ff7c95/invoke.js"></script><div id="container-dc64d153a059c9dd24df1ab292ff7c95"></div>`;
+      adContainer2.innerHTML = `<script async="async" data-cfasync="false" src="//pl25580720.profitablecpmrate.com/dc64d153a059c9dd24df1ab292ff7c95/invoke.js"></script>
+      <div id="container-dc64d153a059c9dd24df1ab292ff7c95"></div>`;
     }
   }, [videoUrl]); // Re-run the effect when `videoUrl` changes
 
@@ -129,6 +136,7 @@ const Downloader = () => {
         {videoUrl && (
           <div className="space-y-4">
             <div className="bg-slate-white">
+              {/* Video iframe */}
               <iframe
                 src={`https://player.terabox.tech/?url=${encodeURIComponent(videoUrl)}`}
                 className="w-full aspect-video rounded-lg"
@@ -145,7 +153,6 @@ const Downloader = () => {
 };
 
 export default Downloader;
-
 
 // Render the TeraboxScriptSection component correctly
 const TeraboxScriptSection = () => {
