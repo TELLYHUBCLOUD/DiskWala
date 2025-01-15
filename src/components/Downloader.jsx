@@ -49,10 +49,12 @@ const Downloader = () => {
   };
 
   const isValidUrl = (url) => {
+    // Allow partial URLs while typing to avoid interrupting user input
+    if (!url.startsWith("http://") && !url.startsWith("https://")) return false;
     try {
       new URL(url);
       return true;
-    } catch (_) {
+    } catch {
       return false;
     }
   };
