@@ -1,13 +1,14 @@
 import { Header } from "@/components/Header";
+import { PageContainer } from "@/components/layout/PageContainer";
 import React from "react";
 
 export default function page() {
   return (
     <>
       <Header />
-      <div className="container p-10 text-lg lead">
+      <PageContainer title="About us">
         <Content />
-      </div>
+      </PageContainer>
     </>
   );
 }
