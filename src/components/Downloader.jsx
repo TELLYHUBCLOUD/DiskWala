@@ -72,7 +72,7 @@ const Downloader = () => {
           </p>
         </div>
 
-        <div className="bg-slate-800/50 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-slate-700">
+        <div className="bg-white backdrop-blur-lg rounded-2xl p-1 shadow-xl border border-slate-700">
           <div className="relative">
             <input
               id="input-url"
@@ -80,7 +80,7 @@ const Downloader = () => {
               value={inputUrl}
               onChange={handleUrlChange}
               placeholder="Paste your Terabox URL here"
-              className="w-full bg-slate-900/50 text-white placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+              className="w-full bg-white text-blue-600/text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
             />
           </div>
         </div>
