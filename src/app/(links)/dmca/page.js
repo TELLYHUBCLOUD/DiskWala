@@ -77,7 +77,7 @@ const Content = () => {
       <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 mt-8">
         <h3 className="text-xl font-semibold mb-4">Contact Our DMCA Agent</h3>
         <p className="text-blue-600 dark:text-blue-400">
-          mail.teradownloader@gmail.com
+          plugovate@gmail.com
         </p>
       </div>
     </div>
