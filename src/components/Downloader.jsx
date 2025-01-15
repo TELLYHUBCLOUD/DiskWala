@@ -22,14 +22,15 @@ const Downloader = () => {
 
   const handleUrlChange = (e) => {
     const url = e.target.value;
+    setInputUrl(url);
+    // Update the URL with the input URL parameter only if valid
     if (isValidUrl(url)) {
-      setInputUrl(url);
-      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
+      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(
+        url
+      )}`;
       router.push(newUrl);
       let id = url.split("/")[4];
       fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
-    } else {
-      alert("Please enter a valid URL.");
     }
   };
 
