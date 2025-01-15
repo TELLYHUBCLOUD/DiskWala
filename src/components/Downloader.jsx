@@ -94,8 +94,7 @@ const handleWatchVideo = () => {
         {/* Ad Code */}
         <div
           dangerouslySetInnerHTML={{
-            __html: `<script async="async" data-cfasync="false" src="//pl25580720.profitablecpmrate.com/dc64d153a059c9dd24df1ab292ff7c95/invoke.js"></script>
-<div id="container-dc64d153a059c9dd24df1ab292ff7c95"></div>`,
+            __html: `<script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script>`,
           }}
         />
         {/* End of Ad Code */}
@@ -175,7 +174,14 @@ const handleWatchVideo = () => {
     </div>
   );
 };
-
+        {/* Ad Code */}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `<script async="async" data-cfasync="false" src="//pl25580720.profitablecpmrate.com/dc64d153a059c9dd24df1ab292ff7c95/invoke.js"></script>
+<div id="container-dc64d153a059c9dd24df1ab292ff7c95"></div>`,
+          }}
+        />
+        {/* End of Ad Code */}
 export default Downloader;
 
 // Render the TeraboxScriptSection component correctly
