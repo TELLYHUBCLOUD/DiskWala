@@ -10,13 +10,15 @@ const Downloader = () => {
   const SearchParamsWrapper = () => {
     const searchParams = useSearchParams();
 
-  useEffect(() => {
-    // Check URL parameters on client side
-    const url = searchParams.get("url");
-    if (url) {
-      setInputUrl(decodeURIComponent(url)); // Decode the URL parameter
-    }
-  }, [searchParams]);
+    useEffect(() => {
+      const url = searchParams.get("url");
+      if (url) {
+        setInputUrl(decodeURIComponent(url));
+      }
+    }, [searchParams]);
+
+    return null;
+  };
 
   const handleUrlChange = (e) => {
     const url = e.target.value;
