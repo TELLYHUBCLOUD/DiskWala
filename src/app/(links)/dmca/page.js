@@ -33,7 +33,7 @@ const Content = () => {
         </p>
         <p>
           To report unauthorized use of your copyrighted work, email our
-          designated DMCA Agent at mail.teradownloader@gmail.com with:
+          designated DMCA Agent at plugovate@gmail.com with:
         </p>
         <ul>
           <li>Your valid physical or electronic signature</li>
