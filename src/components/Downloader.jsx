@@ -20,19 +20,22 @@ const Downloader = () => {
     return null;
   };
 
-  const handleUrlChange = (e) => {
-    const url = e.target.value;
-    setInputUrl(url);
-    // Update the URL with the input URL parameter only if valid
+const handleUrlChange = (e) => {
+  const url = e.target.value;
+  setInputUrl(url); // Update state immediately
+
+  // Debounce router.push to prevent frequent re-renders
+  clearTimeout(window.routerUpdateTimeout);
+  window.routerUpdateTimeout = setTimeout(() => {
     if (isValidUrl(url)) {
-      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(
-        url
-      )}`;
-      router.push(newUrl);
+      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
+      router.push(newUrl); // Push only if valid and debounced
       let id = url.split("/")[4];
-      fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
+      fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
     }
-  };
+  }, 300); // 300ms debounce
+};
+
 
   const copyShareLink = () => {
     const currentUrl = `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
