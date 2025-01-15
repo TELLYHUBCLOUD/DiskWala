@@ -22,27 +22,25 @@ const Downloader = () => {
 
   const handleUrlChange = (e) => {
     const url = e.target.value;
-    setInputUrl(url); // Update state first to allow input changes
+    setInputUrl(url); // Always update the state first
     if (isValidUrl(url)) {
       const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
-      router.push(newUrl); // Update the URL only if valid
-      const id = url.split("/")[4];
-      fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
+      router.push(newUrl); // Update the URL only for valid inputs
+      let id = url.split("/")[4];
+      fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
     }
   };
 
   const copyShareLink = () => {
     const currentUrl = `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
-    navigator.clipboard
-      .writeText(currentUrl)
+    navigator.clipboard.writeText(currentUrl)
       .then(() => alert("Share link copied to clipboard"))
       .catch((err) => console.error("Error copying share link:", err));
   };
 
   const copyEmbedCode = () => {
     const embedCode = `<iframe src="${window.location.origin}/play.html?url=${encodeURIComponent(inputUrl)}" width="700px" height="600px" frameborder="0" allowfullscreen scrolling="no"></iframe>`;
-    navigator.clipboard
-      .writeText(embedCode)
+    navigator.clipboard.writeText(embedCode)
       .then(() => alert("Embed code copied to clipboard"))
       .catch((err) => console.error("Error copying embed code:", err));
   };
@@ -63,7 +61,7 @@ const Downloader = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <SearchParamsWrapper />
       </Suspense>
-      {/* Ad Code */}
+            {/* Ad Code */}
       <div
         dangerouslySetInnerHTML={{
           __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
@@ -79,7 +77,7 @@ const Downloader = () => {
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
         </div>
-
+        
         <div className="bg-white backdrop-blur-lg rounded-2xl p-1 shadow-xl border border-slate-700">
           <div className="relative">
             <input
@@ -101,6 +99,9 @@ const Downloader = () => {
                 className="group relative px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
               >
                 <span className="flex items-center justify-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
                   Copy Embed Code
                 </span>
               </button>
@@ -110,6 +111,9 @@ const Downloader = () => {
                 className="group relative px-6 py-3 bg-violet-600 hover:bg-violet-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-violet-500/25"
               >
                 <span className="flex items-center justify-center gap-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                  </svg>
                   Share Link
                 </span>
               </button>
@@ -135,7 +139,7 @@ const Downloader = () => {
           </>
         )}
       </div>
-      <TeraboxScriptSection /> {/* Include the component */}
+      <TeraboxScriptSection /> {/* Include the component here */}
     </div>
   );
 };
