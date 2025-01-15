@@ -10,26 +10,24 @@ const Downloader = () => {
   const SearchParamsWrapper = () => {
     const searchParams = useSearchParams();
 
-    useEffect(() => {
-      const url = searchParams.get("url");
-      if (url) {
-        setInputUrl(decodeURIComponent(url));
-      }
-    }, [searchParams]);
+  useEffect(() => {
+    const url = searchParams.get("url");
+    if (url) {
+      setInputUrl(decodeURIComponent(url));
+    }
+  }, [searchParams]);
 
-    return null;
+  const handleUrlChange = (e) => {
+    const url = e.target.value;
+    setInputUrl(url);
+    // Update the URL with the input URL parameter only if valid
+    if (isValidUrl(url)) {
+      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
+      router.push(newUrl);
+      let id = url.split("/")[4];
+      fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
+    }
   };
-
-const handleUrlChange = (e) => {
-  const url = e.target.value;
-  setInputUrl(url); // Always update the state first
-  if (isValidUrl(url)) {
-    const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
-    router.push(newUrl); // Update the URL only for valid inputs
-    let id = url.split("/")[4];
-    fetch("https://apis.terabox.tech/api/upload?id=" + id + "&user=1");
-  }
-};
 
   const copyShareLink = () => {
     const currentUrl = `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
@@ -45,16 +43,15 @@ const handleUrlChange = (e) => {
       .catch((err) => console.error("Error copying embed code:", err));
   };
 
-const isValidUrl = (url) => {
-  if (!url) return true; // Allow empty input
-  if (!url.startsWith("http://") && !url.startsWith("https://")) return false;
-  try {
-    new URL(url);
-    return true;
-  } catch {
-    return false;
-  }
-};
+  const isValidUrl = (url) => {
+    if (!url.startsWith("http://") && !url.startsWith("https://")) return false;
+    try {
+      new URL(url);
+      return true;
+    } catch {
+      return false;
+    }
+  };
 
 
   return (
