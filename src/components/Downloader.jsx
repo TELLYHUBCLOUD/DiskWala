@@ -115,7 +115,7 @@ const Downloader = () => {
           </p>
         </div>
 
-        <div className="bg-white backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-slate-700">
+        <div className="bg-white backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-slate-700" style="margin-top: 10px;">
           <div className="relative space-y-4">
             <input
               id="input-url"
