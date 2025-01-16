@@ -36,7 +36,7 @@ const Downloader = () => {
 
       setIsLoading(true); // Show the loading bar
       setLoadingProgress(0); // Reset the progress bar
-      setVideoUrl(""); // Clear the video URL while loading
+      setVideoUrl(inputUrl); // Set the video URL immediately
       setInputUrl(""); // Clear the input box
 
       // Simulate loading bar progress
@@ -44,22 +44,21 @@ const Downloader = () => {
         setLoadingProgress((prev) => {
           if (prev >= 100) {
             clearInterval(interval); // Stop progress when it reaches 100%
-            setVideoUrl(inputUrl); // Set the video URL after loading completes
-
-            // Scroll smoothly to the video iframe
-            setTimeout(() => {
-              const iframeElement = document.querySelector("iframe");
-              if (iframeElement) {
-                iframeElement.scrollIntoView({ behavior: "smooth", block: "center" });
-              }
-              setIsLoading(false); // Hide the loading bar after scrolling
-            }, 200); // Small delay for iframe rendering
+            setIsLoading(false); // Hide the loading bar
+            scrollToVideo(); // Scroll to the video iframe
           }
           return prev + 10; // Increment progress
         });
-      }, 200);
+      }, 500);
     } else {
       alert("Please enter a valid URL.");
+    }
+  };
+
+  const scrollToVideo = () => {
+    const iframeElement = document.querySelector("iframe");
+    if (iframeElement) {
+      iframeElement.scrollIntoView({ behavior: "smooth", block: "center" });
     }
   };
 
@@ -101,13 +100,16 @@ const Downloader = () => {
           <h1 className="text-3xl font-extrabold mb-6 text-center bg-white text-blue-600 rounded-lg shadow-lg p-4">
             PlayTerabox Video Downloader, Player, Embed Videos
           </h1>
-        {/* Ad Code */}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
-          }}
-        />
-        {/* End of Ad Code */}
+{/* Ad Code */}
+<div id="ad-container" className="my-4">
+  <div
+    dangerouslySetInnerHTML={{
+      __html: `<script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script>`,
+    }}
+  ></div>
+</div>
+{/* End of Ad Code */}
+
           <p className="text-lg text-gray-700 mb-6">
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
