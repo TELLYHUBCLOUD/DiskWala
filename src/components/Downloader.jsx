@@ -7,6 +7,8 @@ const Downloader = () => {
   const router = useRouter();
   const [inputUrl, setInputUrl] = useState(""); // Input field state
   const [videoUrl, setVideoUrl] = useState(""); // Rendered video URL state
+  const [isLoading, setIsLoading] = useState(false); // Loading bar state
+  const [loadingProgress, setLoadingProgress] = useState(0); // Progress bar state
 
   const SearchParamsWrapper = () => {
     const searchParams = useSearchParams();
@@ -14,7 +16,6 @@ const Downloader = () => {
     useEffect(() => {
       const url = searchParams.get("url");
       if (url && !videoUrl) {
-        // Prevent overwriting if a video is already loaded
         setInputUrl(decodeURIComponent(url));
       }
     }, [searchParams, videoUrl]);
@@ -26,28 +27,32 @@ const Downloader = () => {
     setInputUrl(e.target.value); // Update the state for input value
   };
 
-const handleWatchVideo = () => {
-  if (isValidUrl(inputUrl)) {
-    const newUrl = `${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
-    router.push(newUrl); // Update the URL
-    const id = inputUrl.split("/")[4];
-    fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
+  const handleWatchVideo = () => {
+    if (isValidUrl(inputUrl)) {
+      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(inputUrl)}`;
+      router.push(newUrl); // Update the URL
+      const id = inputUrl.split("/")[4];
+      fetch(`https://apis.terabox.tech/api/upload?id=${id}&user=1`);
 
-    setVideoUrl(inputUrl); // Set the video URL to trigger iframe rendering
-    setInputUrl(""); // Clear the input box after setting the video URL
+      setIsLoading(true); // Show the loading bar
+      setLoadingProgress(0); // Reset the progress bar
+      setVideoUrl(inputUrl); // Set the video URL to trigger iframe rendering
+      setInputUrl(""); // Clear the input box after setting the video URL
 
-    // Wait for the video iframe to be rendered and then scroll to it
-    setTimeout(() => {
-      const iframeElement = document.querySelector("iframe");
-      if (iframeElement) {
-        iframeElement.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }, 100); // Small delay to ensure the iframe is rendered
-  } else {
-    alert("Please enter a valid URL.");
-  }
-};
-
+      // Simulate loading bar progress
+      const interval = setInterval(() => {
+        setLoadingProgress((prev) => {
+          if (prev >= 100) {
+            clearInterval(interval); // Stop progress when it reaches 100%
+            setIsLoading(false); // Hide the loading bar
+          }
+          return prev + 10; // Increment progress
+        });
+      }, 200);
+    } else {
+      alert("Please enter a valid URL.");
+    }
+  };
 
   const copyShareLink = () => {
     const currentUrl = `${window.location.origin}${window.location.pathname}?url=${encodeURIComponent(videoUrl)}`;
@@ -84,21 +89,14 @@ const handleWatchVideo = () => {
 
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-4">
-          <h1 className="text-4xl font-extrabold mb-6 text-center bg-white text-blue-600 rounded-lg shadow-lg p-4">
+          <h1 className="text-3xl font-extrabold mb-6 text-center bg-white text-blue-600 rounded-lg shadow-lg p-4">
             PlayTerabox Video Downloader, Player, Embed Videos
           </h1>
-        {/* Ad Code */}
-        <div
-          dangerouslySetInnerHTML={{
-            __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
-          }}
-        />
-        {/* End of Ad Code */}
           <p className="text-lg text-gray-700 mb-6">
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
         </div>
-        
+
         <div className="bg-white backdrop-blur-lg rounded-2xl p-4 shadow-xl border border-slate-700">
           <div className="relative space-y-4">
             <input
@@ -118,7 +116,17 @@ const handleWatchVideo = () => {
           </div>
         </div>
 
-        {videoUrl && (
+        {/* Loading Bar */}
+        {isLoading && (
+          <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden mt-4">
+            <div
+              style={{ width: `${loadingProgress}%` }}
+              className="absolute h-full bg-blue-600 transition-all duration-200"
+            ></div>
+          </div>
+        )}
+
+        {videoUrl && !isLoading && (
           <div className="space-y-4">
             <div className="bg-slate-white">
               {/* Video iframe */}
@@ -136,7 +144,6 @@ const handleWatchVideo = () => {
               <button
                 className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
                 onClick={() => {
-                  // Placeholder for ad link functionality
                   window.open("https://acridiumverneukeryoverfill.monster/EFrgmdcf526a23e34fa5209d7d4e9a7d9a40561164584?q={KEYWORD}");
                 }}
               >
