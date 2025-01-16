@@ -36,6 +36,7 @@ const Downloader = () => {
 
       setIsLoading(true); // Show the loading bar
       setLoadingProgress(0); // Reset the progress bar
+      setVideoUrl(""); // Clear the video URL while loading
       setInputUrl(""); // Clear the input box
 
       // Simulate loading bar progress
@@ -45,14 +46,14 @@ const Downloader = () => {
             clearInterval(interval); // Stop progress when it reaches 100%
             setVideoUrl(inputUrl); // Set the video URL after loading completes
 
-            // Hide the loading bar and scroll to video after a small delay
+            // Scroll smoothly to the video iframe
             setTimeout(() => {
-              setIsLoading(false);
               const iframeElement = document.querySelector("iframe");
               if (iframeElement) {
                 iframeElement.scrollIntoView({ behavior: "smooth", block: "center" });
               }
-            }, 500); // Small delay for iframe rendering
+              setIsLoading(false); // Hide the loading bar after scrolling
+            }, 200); // Small delay for iframe rendering
           }
           return prev + 10; // Increment progress
         });
@@ -131,69 +132,74 @@ const Downloader = () => {
           </div>
         </div>
 
-        {/* Loading Bar */}
-        {isLoading && (
-          <div className="mt-4 space-y-2">
-            <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
-              <div
-                style={{ width: `${loadingProgress}%` }}
-                className="absolute h-full bg-blue-600 transition-all duration-200"
-              ></div>
-            </div>
-            <p className="text-center text-gray-700 font-medium animate-pulse">
-              Loading Your Video Please Wait
-            </p>
+        {/* Video and Loading Bar */}
+        {(isLoading || videoUrl) && (
+          <div className="relative space-y-4 mt-4">
+            {/* Video iframe */}
+            {videoUrl && (
+              <div className="bg-slate-white">
+                <iframe
+                  src={`https://player.terabox.tech/?url=${encodeURIComponent(videoUrl)}`}
+                  className="w-full aspect-video rounded-lg"
+                  frameBorder="0"
+                  allowFullScreen
+                  scrolling="no"
+                />
+              </div>
+            )}
+
+            {/* Loading Bar */}
+            {isLoading && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="relative w-3/4 h-2 bg-gray-200 rounded-full overflow-hidden">
+                  <div
+                    style={{ width: `${loadingProgress}%` }}
+                    className="absolute h-full bg-blue-600 transition-all duration-200"
+                  ></div>
+                </div>
+                <p className="text-center text-gray-700 font-medium animate-pulse mt-2">
+                  Loading Your Video Please Wait
+                </p>
+              </div>
+            )}
           </div>
         )}
 
-        {videoUrl && !isLoading && (
+        {/* Buttons below the video */}
+        {videoUrl && (
           <div className="space-y-4">
-            <div className="bg-slate-white">
-              {/* Video iframe */}
-              <iframe
-                src={`https://player.terabox.tech/?url=${encodeURIComponent(videoUrl)}`}
-                className="w-full aspect-video rounded-lg"
-                frameBorder="0"
-                allowFullScreen
-                scrolling="no"
-              />
-            </div>
+            <button
+              className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
+              onClick={() => {
+                window.open("https://acridiumverneukeryoverfill.monster/EFrgmdcf526a23e34fa5209d7d4e9a7d9a40561164584?q={KEYWORD}");
+              }}
+            >
+              Download Now
+            </button>
 
-            {/* Buttons below the video */}
-            <div className="space-y-4">
+            <a
+              href={`https://player.terabox.tech/?url=${encodeURIComponent(videoUrl)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center px-6 py-3 bg-green-600 hover:bg-green-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-green-500/25"
+            >
+              Open Full-Screen Video
+            </a>
+
+            <div className="grid gap-4 md:grid-cols-2">
               <button
-                className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
-                onClick={() => {
-                  window.open("https://acridiumverneukeryoverfill.monster/EFrgmdcf526a23e34fa5209d7d4e9a7d9a40561164584?q={KEYWORD}");
-                }}
+                onClick={copyEmbedCode}
+                className="group relative px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
               >
-                Download Now
+                Copy Embed Code
               </button>
 
-              <a
-                href={`https://player.terabox.tech/?url=${encodeURIComponent(videoUrl)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center px-6 py-3 bg-green-600 hover:bg-green-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-green-500/25"
+              <button
+                onClick={copyShareLink}
+                className="group relative px-6 py-3 bg-violet-600 hover:bg-violet-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-violet-500/25"
               >
-                Open Full-Screen Video
-              </a>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <button
-                  onClick={copyEmbedCode}
-                  className="group relative px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
-                >
-                  Copy Embed Code
-                </button>
-
-                <button
-                  onClick={copyShareLink}
-                  className="group relative px-6 py-3 bg-violet-600 hover:bg-violet-500 rounded-xl transition-all duration-200 shadow-lg hover:shadow-violet-500/25"
-                >
-                  Share Link
-                </button>
-              </div>
+                Share Link
+              </button>
             </div>
           </div>
         )}
