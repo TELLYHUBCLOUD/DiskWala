@@ -36,15 +36,23 @@ const Downloader = () => {
 
       setIsLoading(true); // Show the loading bar
       setLoadingProgress(0); // Reset the progress bar
-      setVideoUrl(inputUrl); // Set the video URL to trigger iframe rendering
-      setInputUrl(""); // Clear the input box after setting the video URL
+      setInputUrl(""); // Clear the input box
 
       // Simulate loading bar progress
       const interval = setInterval(() => {
         setLoadingProgress((prev) => {
           if (prev >= 100) {
             clearInterval(interval); // Stop progress when it reaches 100%
-            setIsLoading(false); // Hide the loading bar
+            setVideoUrl(inputUrl); // Set the video URL after loading completes
+
+            // Hide the loading bar and scroll to video after a small delay
+            setTimeout(() => {
+              setIsLoading(false);
+              const iframeElement = document.querySelector("iframe");
+              if (iframeElement) {
+                iframeElement.scrollIntoView({ behavior: "smooth", block: "center" });
+              }
+            }, 500); // Small delay for iframe rendering
           }
           return prev + 10; // Increment progress
         });
@@ -125,11 +133,16 @@ const Downloader = () => {
 
         {/* Loading Bar */}
         {isLoading && (
-          <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden mt-4">
-            <div
-              style={{ width: `${loadingProgress}%` }}
-              className="absolute h-full bg-blue-600 transition-all duration-200"
-            ></div>
+          <div className="mt-4 space-y-2">
+            <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div
+                style={{ width: `${loadingProgress}%` }}
+                className="absolute h-full bg-blue-600 transition-all duration-200"
+              ></div>
+            </div>
+            <p className="text-center text-gray-700 font-medium animate-pulse">
+              Loading Your Video Please Wait
+            </p>
           </div>
         )}
 
@@ -151,7 +164,7 @@ const Downloader = () => {
               <button
                 className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
                 onClick={() => {
-                  window.open("https://acridiumverneukeryoverfill.monster/EFrgmdcf526a23e34fa5209d7d4e9a7d9a40561164584?q={Download Video}");
+                  window.open("https://acridiumverneukeryoverfill.monster/EFrgmdcf526a23e34fa5209d7d4e9a7d9a40561164584?q={KEYWORD}");
                 }}
               >
                 Download Now
