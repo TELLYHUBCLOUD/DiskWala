@@ -94,12 +94,6 @@ const Downloader = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <SearchParamsWrapper />
       </Suspense>
-
-      <div className="max-w-4xl mx-auto space-y-8">
-        <div className="text-center space-y-4">
-          <h1 className="text-2xl font-extrabold text-center bg-white text-blue-600 rounded-lg shadow-lg p-3">
-            PlayTerabox Video Downloader, Player, Embed Videos
-          </h1>
 {/* Ad Code */}
 <div id="ad-container" className="my-4">
   <div
@@ -109,7 +103,12 @@ const Downloader = () => {
   ></div>
 </div>
 {/* End of Ad Code */}
-
+      <div className="max-w-4xl mx-auto space-y-8">
+        <div className="text-center space-y-4">
+          <h1 className="text-2xl font-extrabold text-center bg-white text-blue-600 rounded-lg shadow-lg p-3">
+            PlayTerabox Video Downloader, Player, Embed Videos
+          </h1>
+          
           <p className="text-sm text-gray-700 mb-6">
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
