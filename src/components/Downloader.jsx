@@ -92,6 +92,13 @@ const Downloader = () => {
           <h1 className="text-3xl font-extrabold mb-6 text-center bg-white text-blue-600 rounded-lg shadow-lg p-4">
             PlayTerabox Video Downloader, Player, Embed Videos
           </h1>
+        {/* Ad Code */}
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `<div><script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script></div>`,
+          }}
+        />
+        {/* End of Ad Code */}
           <p className="text-lg text-gray-700 mb-6">
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
@@ -144,7 +151,7 @@ const Downloader = () => {
               <button
                 className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
                 onClick={() => {
-                  window.open("https://acridiumverneukeryoverfill.monster/EFrgmdcf526a23e34fa5209d7d4e9a7d9a40561164584?q={KEYWORD}");
+                  window.open("https://acridiumverneukeryoverfill.monster/EFrgmdcf526a23e34fa5209d7d4e9a7d9a40561164584?q={Download Video}");
                 }}
               >
                 Download Now
