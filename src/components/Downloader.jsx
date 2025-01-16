@@ -110,7 +110,7 @@ const Downloader = () => {
 </div>
 {/* End of Ad Code */}
 
-          <p className="text-base text-gray-700 mb-6">
+          <p className="text-sm text-gray-700 mb-6">
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
         </div>
