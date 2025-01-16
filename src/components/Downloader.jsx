@@ -94,15 +94,6 @@ const Downloader = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <SearchParamsWrapper />
       </Suspense>
-{/* Ad Code */}
-<div id="ad-container" className="my-4">
-  <div
-    dangerouslySetInnerHTML={{
-      __html: `<script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script>`,
-    }}
-  ></div>
-</div>
-{/* End of Ad Code */}
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-4">
           <h1 className="text-2xl font-extrabold text-center bg-white text-blue-600 rounded-lg shadow-lg p-3">
@@ -165,7 +156,17 @@ const Downloader = () => {
             )}
           </div>
         )}
-
+        
+{/* Ad Code */}
+<div id="ad-container" className="my-4">
+  <div
+    dangerouslySetInnerHTML={{
+      __html: `<script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script>`,
+    }}
+  ></div>
+</div>
+{/* End of Ad Code */}
+        
         {/* Buttons below the video */}
         {videoUrl && (
           <div className="space-y-4">
