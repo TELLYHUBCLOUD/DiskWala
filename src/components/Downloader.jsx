@@ -136,6 +136,9 @@ const Downloader = () => {
                   frameBorder="0"
                   allowFullScreen
                   scrolling="no"
+                  style={{
+                    height: window.innerWidth < 768 ? "450px" : "auto", // For mobile devices
+                  }}
                 />
               </div>
             )}
