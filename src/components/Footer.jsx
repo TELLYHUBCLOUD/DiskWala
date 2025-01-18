@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="max-w-7xl mx-auto px-8 py-6">
             <nav className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-black">
               {[
-                ["Privacy Policy", "/privacy"],
-                ["About Us", "/about"],
+                ["Privacy Policy", "/privacy-policy"],
+                ["About Us", "/about-us"],
                 ["Terms of Service", "/tos"],
-                ["Contact", "/contact"],
+                ["Contact", "/contact-us"],
                 ["DMCA", "/dmca"],
               ].map(([title, url]) => (
                 <a

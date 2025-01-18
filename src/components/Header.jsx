@@ -2,10 +2,10 @@ import Link from "next/link";
 import { YoutubeIcon, Menu } from "lucide-react";
 
 export const links = [
-  { name: "Privacy Policy", slug: "/privacy" },
+  { name: "Privacy Policy", slug: "/privacy-policy" },
   { name: "Terms of service", slug: "/tos" },
-  { name: "About", slug: "/about" },
-  { name: "Contact", slug: "/contact" },
+  { name: "About", slug: "/about-us" },
+  { name: "Contact", slug: "/contact-us" },
   { name: "DMCA", slug: "/dmca" },
 ];
 

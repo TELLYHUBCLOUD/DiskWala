@@ -11,8 +11,8 @@ export const metadata = {
     title: "About Us - PlayTerabox: Video Downloader",
     description: "Discover who we are and our mission.",
     type: "website",
-    url: "https://playterabox.com/about",
-    images: ["/og-about.png"],
+    url: "https://playterabox.com/about-us",
+    images: ["/og.jpg"],
   },
 };
 

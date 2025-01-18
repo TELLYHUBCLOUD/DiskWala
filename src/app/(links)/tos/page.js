@@ -2,6 +2,20 @@ import { Header } from "@/components/Header";
 import { PageContainer } from "@/components/layout/PageContainer";
 import React from "react";
 
+export const metadata = {
+  title: "Terms and Conditions - PlayTerabox",
+  description:
+    "Welcome to Playterabox.com! These terms and conditions outline the rules and regulations for the use of our Website.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Terms and Conditions - PlayTerabox",
+    description: "Terms and Conditions Policy page.",
+    type: "website",
+    url: "https://playterabox.com/tos",
+    images: ["/og.jpg"],
+  },
+};
+
 export default function page() {
   return (
     <>

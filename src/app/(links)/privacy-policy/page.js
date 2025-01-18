@@ -2,6 +2,20 @@ import { Header } from "@/components/Header";
 import { PageContainer } from "@/components/layout/PageContainer";
 import React from "react";
 
+export const metadata = {
+  title: "Privacy Policy - PlayTerabox",
+  description:
+    "This Privacy Policy document contains types of information that is collected and recorded by playterabox.com and how we use it.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Privacy Policy - PlayTerabox",
+    description: "Privacy Policy page.",
+    type: "website",
+    url: "https://playterabox.com/privacy-policy",
+    images: ["/og.jpg"],
+  },
+};
+
 export default function page() {
   return (
     <>
