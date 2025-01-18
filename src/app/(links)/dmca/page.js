@@ -2,6 +2,20 @@ import { Header } from "@/components/Header";
 import { PageContainer } from "@/components/layout/PageContainer";
 import React from "react";
 
+export const metadata = {
+  title: "DMCA Policy - PlayTerabox",
+  description:
+    "Welcome to our DMCA Policy page. Here, we outline our procedures for reporting copyright violations and handling repeat infringements.",
+  robots: "index, follow",
+  openGraph: {
+    title: "DMCA Policy - PlayTerabox",
+    description: "DMCA Policy page.",
+    type: "website",
+    url: "https://playterabox.com/dmca",
+    images: ["/og.jpg"],
+  },
+};
+
 export default function page() {
   return (
     <>
