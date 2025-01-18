@@ -6,13 +6,13 @@ export const metadata = {
   title: "Contact Us - PlayTerabox",
   description:
     "Get in Touch With PlayTerabox Team Now.",
-  robots: "noindex, nofollow",
+  robots: "index, follow",
   openGraph: {
-    title: "About Us - PlayTerabox: Video Downloader",
-    description: "Discover who we are and our mission.",
+    title: "Contact Us - PlayTerabox",
+    description: "Get in Touch With PlayTerabox Team Now.",
     type: "website",
-    url: "https://playterabox.com/about",
-    images: ["/og-about.png"],
+    url: "https://playterabox.com/contact-us",
+    images: ["/og.jpg"],
   },
 };
 
