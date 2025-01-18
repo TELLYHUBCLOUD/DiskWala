@@ -1,30 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
- import Script from "next/script";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
-export const metadata = {
-  title: "PlayTerabox: Video Downloader, Player, Embed Videos, No login",
-  description: "Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!",
-  keywords: ["terabox", "terabox video downloader online", "terabox direct download", "terabox downloader", "terabox online downloader", "terabox video downloader", "terabox player", "terabox online player", "terabox links", "terabox link converter", "terabox direct link", "terabox direct videos", "terabox direct files", "terabox bypass", "terabox link bypass", "terabox video downloader", "terabox video download", "terabox link downloader", "terabox downloader online"],
-  authors: [{ name: "Playterabox.com" }],
-  robots: "index, follow",
-  openGraph: {
-    title: "PlayTerabox: Video Downloader, Player, Embed Videos, No login",
-    description: "Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!",
-    type: "website",
-    images: "./og.png",
-    url: "https://playterabox.com",
-    siteName: "Playterabox.com",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "PlayTerabox.com Video Downloader, Player, Embed Videos, No login",
-    description: "Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!",
-    images: "./og.png",
-    site: "@microsoft",
-  },
-};
 
 let analytics = `
 <!-- Google tag (gtag.js) -->
@@ -33,7 +11,6 @@ let analytics = `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-GQQKJ4TV2K');
 </script>`;
 
@@ -59,21 +36,24 @@ const jsonld = `
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className=""  >
+    <html lang="en" className="">
       <head>
         <link rel="icon" href="/image.png" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#000000" /> 
+        <meta name="theme-color" content="#000000" />
 
         <div className="analytics">
-          <div dangerouslySetInnerHTML={{__html: analytics}}></div>
+          <div dangerouslySetInnerHTML={{ __html: analytics }}></div>
         </div>
-        <Script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4291572749420740" crossorigin="anonymous"></Script>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4291572749420740"
+          crossOrigin="anonymous"
+        ></Script>
         <div dangerouslySetInnerHTML={{ __html: jsonld }}></div>
       </head>
       <body className={inter.className}>{children}</body>
-     </html>
+    </html>
   );
 }
-
