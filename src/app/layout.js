@@ -25,11 +25,6 @@ const jsonld = `
   "publisher": {
     "@type": "Organization",
     "name": "Playterabox.com"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "reviewCount": "100"
   }
 }
 </script>`;
