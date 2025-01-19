@@ -145,7 +145,7 @@ const Downloader = () => {
 
             {/* Loading Bar */}
             {isLoading && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="absolute top-px flex flex-col items-center justify-center">
                 <div className="relative w-3/4 h-2 bg-gray-200 rounded-full overflow-hidden">
                   <div
                     style={{ width: `${loadingProgress}%` }}
