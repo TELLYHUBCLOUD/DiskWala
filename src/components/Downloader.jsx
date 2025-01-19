@@ -162,11 +162,17 @@ const Downloader = () => {
         
 {/* Ad Code */}
 <div id="ad-container" className="my-4">
-  <div
-    dangerouslySetInnerHTML={{
-      __html: `<script data-cfasync="false" async type="text/javascript" src="//kq.outsidesubtree.com/ttGzI3KIErx1k3A0/114258"></script>`,
-    }}
-  ></div>
+  <div>
+    <script
+      dangerouslySetInnerHTML={{
+        __html: `
+          aclib.runBanner({
+            zoneId: '9403106',
+          });
+        `,
+      }}
+    ></script>
+  </div>
 </div>
 {/* End of Ad Code */}
         

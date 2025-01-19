@@ -21,6 +21,15 @@ export default function Home() {
   return (
     <>
       <Header />
+      {/* Ad Code */}
+<div id="ad-container" className="my-4">
+  <div
+    dangerouslySetInnerHTML={{
+      __html: `<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>`,
+    }}
+  ></div>
+</div>
+{/* End of Ad Code */}
       <main className="mt-10">
         <Downloader />
       </main>
