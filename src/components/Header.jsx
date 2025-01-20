@@ -2,8 +2,9 @@ import Link from "next/link";
 import { YoutubeIcon, Menu } from "lucide-react";
 
 export const links = [
-  { name: "Privacy Policy", slug: "/privacy-policy" },
-  { name: "Terms of service", slug: "/tos" },
+  { name: "Home", slug: "/" },
+  { name: "Terabox Downloader", slug: "/tools/terabox-downloader" },
+  { name: "Terabox Online Player", slug: "/tools/terabox-online-player" },
   { name: "About", slug: "/about-us" },
   { name: "Contact", slug: "/contact-us" },
   { name: "DMCA", slug: "/dmca" },
