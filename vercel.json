@@ -1,0 +1,6 @@
+{
+    "routes": [
+      { "src": "/tools/insta-reels-downloader/(.*)", "dest": "/tools/insta-reels-downloader/$1" }
+    ]
+  }
+  
