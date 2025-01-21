@@ -20,7 +20,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./app/(links)/tools/instagram-reel-downloader/src/*"]
+      "@/*": ["./app/(links)/tools/instagram-reels-downloader/src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
