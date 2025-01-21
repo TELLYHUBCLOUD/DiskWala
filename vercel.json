@@ -1,6 +1,11 @@
 {
-    "routes": [
-      { "src": "/tools/insta-reels-downloader/(.*)", "dest": "/tools/insta-reels-downloader/$1" }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "src/app/(links)/tools/insta-reels-downloader/src/package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "src/app/(links)/tools/insta-reels-downloader/src/$1" }
+  ]
+}
