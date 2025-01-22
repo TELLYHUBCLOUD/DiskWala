@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { YoutubeIcon, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export const links = [
   { name: "Home", slug: "/" },
@@ -16,18 +16,28 @@ export const links = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    window.location.href = "/";
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-blue-300 to-transparent backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
-          <Link
+          <a
             href="/"
             className="flex items-center gap-3 transition duration-200 hover:opacity-80"
+            onClick={handleHomeClick}
           >
-            <YoutubeIcon className="w-8 h-8 text-red-500" />
-            <span className="text-lg font-bold from-white">PlayTerabox</span>
-          </Link>
+            <img
+              src="/logo.ico"
+              alt="PlayTerabox Logo"
+              className="w-12 h-12"
+            />
+            <span className="text-lg font-bold text-black">PlayTerabox</span>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
