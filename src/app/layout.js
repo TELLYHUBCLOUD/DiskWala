@@ -48,7 +48,11 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         ></Script>
         <div dangerouslySetInnerHTML={{ __html: jsonld }}></div>
-       <meta name="Trafficstars" content="siteID">
+      <div className="analytics">
+          <div dangerouslySetInnerHTML={{ __html: analytics }}></div>
+        </div>
+            <meta name="Trafficstars" content="siteID">
+            <div dangerouslySetInnerHTML={{ __html: jsonld }}></div>
       </head>
       <body className={inter.className}>{children}</body>
     </html>
