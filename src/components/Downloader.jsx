@@ -159,17 +159,7 @@ const Downloader = () => {
             )}
           </div>
         )}
-        
-{/* Ad Code */}
-<div id="ad-container" className="my-4">
-  <div
-    dangerouslySetInnerHTML={{
-      __html: `<script type="text/javascript" src="//cdn.runative-syndicate.com/sdk/v1/bi.js" data-ts-spot="39faec82ab9542afa76743729ca802b0" data-ts-width="300" data-ts-height="100"  async defer></script>`,
-    }}
-  ></div>
-</div>
-{/* End of Ad Code */}
-        
+         
         {/* Buttons below the video */}
         {videoUrl && (
           <div className="space-y-4">
