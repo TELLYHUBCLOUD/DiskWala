@@ -47,7 +47,6 @@ export default function RootLayout({ children }) {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4291572749420740"
           crossOrigin="anonymous"
         ></Script>
-            <meta name="Trafficstars" content="siteID">
         <div dangerouslySetInnerHTML={{ __html: jsonld }}></div>
       </head>
       <body className={inter.className}>{children}</body>
