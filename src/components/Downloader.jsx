@@ -203,15 +203,7 @@ const Downloader = () => {
     </div>
   );
 };
-{/* Ad Code */}
-{/* <div id="ad-container" className="my-4">
-  <div
-    dangerouslySetInnerHTML={{
-      __html: `<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('theetheks.com',8844627,document.createElement('script'))</script>`,
-    }}
-  ></div>
-</div> */}
-{/* End of Ad Code */}
+<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('theetheks.com',8844627,document.createElement('script'))</script>
 export default Downloader;
 
 // Render the TeraboxScriptSection component correctly
