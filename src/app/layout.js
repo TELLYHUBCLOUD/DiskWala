@@ -20,12 +20,12 @@ const jsonld = `
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Playterabox.com",
+  "name": "PlayTerabox",
   "url": "https://playterabox.com",
-  "description": "Watch, Embed and download Terabox Videos 🔥 100% working ✅ Download Terabox videos with TeraDL",
+  "description": "Play and download Terabox videos easily with PlayTerabox. Our tool is 100% Working and offers embed videos, skip ads, no login, and just pure video enjoyment!",
   "publisher": {
     "@type": "Organization",
-    "name": "Playterabox.com"
+    "name": "PlayTerabox"
   }
 }
 </script>`;
@@ -47,7 +47,6 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         ></Script>
         <div dangerouslySetInnerHTML={{ __html: jsonld }}></div>
-         <meta name="Trafficstars" content="siteID" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
