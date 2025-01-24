@@ -166,7 +166,7 @@ const Downloader = () => {
             <button
               className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
               onClick={() => {
-                window.open("https://acridiumverneukeryoverfill.monster/EFrgmdcf526a23e34fa5209d7d4e9a7d9a40561164584?q={Download Your Video Now}");
+                window.open("//ak.stikroltiltoowi.net/4/8844580");
               }}
             >
               Download Now
@@ -203,7 +203,15 @@ const Downloader = () => {
     </div>
   );
 };
-
+{/* Ad Code */}
+{/* <div id="ad-container" className="my-4">
+  <div
+    dangerouslySetInnerHTML={{
+      __html: `<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('theetheks.com',8844627,document.createElement('script'))</script>`,
+    }}
+  ></div>
+</div> */}
+{/* End of Ad Code */}
 export default Downloader;
 
 // Render the TeraboxScriptSection component correctly
