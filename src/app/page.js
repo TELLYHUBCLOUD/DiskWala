@@ -22,7 +22,9 @@ export default function Home() {
     <>
       <Header />
       <main className="mt-10">
-    {/* Ad Code */}
+        <Downloader />
+      </main>
+        {/* Ad Code */}
 {/* <div id="ad-container" className="my-4">
   <div
     dangerouslySetInnerHTML={{
@@ -31,8 +33,6 @@ export default function Home() {
   ></div>
 </div> */}
 {/* End of Ad Code */}
-        <Downloader />
-      </main>
       <Footer />
     </>
   );
