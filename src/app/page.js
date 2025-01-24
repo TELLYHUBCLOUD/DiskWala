@@ -21,18 +21,18 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="mt-10">
-        <Downloader />
-      </main>
-        {/* Ad Code */}
-{/* <div id="ad-container" className="my-4">
+                {/* Ad Code */}
+<div id="ad-container" className="my-4">
   <div
     dangerouslySetInnerHTML={{
       __html: `<script>(function(d,z,s){s.src='https://'+d+'/400/'+z;try{(document.body||document.documentElement).appendChild(s)}catch(e){}})('theetheks.com',8844627,document.createElement('script'))</script>`,
     }}
   ></div>
-</div> */}
+</div>
 {/* End of Ad Code */}
+      <main className="mt-10">
+        <Downloader />
+      </main>
       <Footer />
     </>
   );
