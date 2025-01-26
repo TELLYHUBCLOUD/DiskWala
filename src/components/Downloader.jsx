@@ -173,7 +173,11 @@ const Downloader = () => {
 <div id="ad-container" className="my-4">
   <div
     dangerouslySetInnerHTML={{
-      __html: `<script type="text/javascript" data-id="juicyads-native-ads" data-ad-zone="1079106" data-targets="a" src="https://js.juicyads.com/juicyads.native-ads.min.js"></script>`,
+      __html: `<!-- JuicyAds v3.0 -->
+<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
+<ins id="1079105" data-width="300" data-height="100"></ins>
+<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1079105});</script>
+<!--JuicyAds END-->`,
     }}
   ></div>
 </div>
