@@ -21,6 +21,15 @@ export default function Home() {
   return (
     <>
       <Header />
+    {/* Ad Code */}
+<div id="ad-container" className="my-4">
+  <div
+    dangerouslySetInnerHTML={{
+      __html: `<meta name="juicyads-site-verification" content="8b17a38e75176adb954a514bf910d7a2">`,
+    }}
+  ></div>
+</div>
+{/* End of Ad Code */
       <main className="mt-10">
         <Downloader />
       </main>
