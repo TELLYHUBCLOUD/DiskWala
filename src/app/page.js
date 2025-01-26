@@ -29,7 +29,7 @@ export default function Home() {
     }}
   ></div>
 </div>
-{/* End of Ad Code */
+{/* End of Ad Code */}
       <main className="mt-10">
         <Downloader />
       </main>
