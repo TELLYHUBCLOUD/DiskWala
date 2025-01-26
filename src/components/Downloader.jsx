@@ -169,6 +169,16 @@ const Downloader = () => {
   ></div>
 </div>
 {/* End of Ad Code */}
+{/* Ad Code */}
+<div id="ad-container" className="my-4">
+  <div
+    dangerouslySetInnerHTML={{
+      __html: `<script type="text/javascript" data-id="juicyads-native-ads" data-ad-zone="1079106" data-targets="a" src="https://js.juicyads.com/juicyads.native-ads.min.js"></script>`,
+    }}
+  ></div>
+</div>
+{/* End of Ad Code */}
+
         {/* Buttons below the video */}
         {videoUrl && (
           <div className="space-y-4">
