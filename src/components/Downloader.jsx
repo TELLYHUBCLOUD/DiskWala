@@ -166,7 +166,7 @@ const Downloader = () => {
             <button
               className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
               onClick={() => {
-                window.open("//ak.stikroltiltoowi.net/4/8844580");
+                window.open("https://t.me/TeraboxxVideoDownloaderbot");
               }}
             >
               Download Now

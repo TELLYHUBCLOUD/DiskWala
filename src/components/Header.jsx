@@ -11,6 +11,7 @@ export const links = [
   { name: "About", slug: "/about-us" },
   { name: "Contact", slug: "/contact-us" },
   { name: "DMCA", slug: "/dmca" },
+  { name: "Use our Bot", slug: "https://t.me/TeraboxxVideoDownloaderbot" },
 ];
 
 export function Header() {
