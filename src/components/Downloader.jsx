@@ -328,7 +328,8 @@ const TeraboxScriptSection = () => {
 
 We are committed to respecting the rights of copyright holders and strictly oppose any illegal activities. If you believe this website infringes upon Terabox's rights or have any concerns, please contact us through the email provided on our Contact page. We will address your inquiry promptly and take necessary actions.
 
-Experience seamless file and video downloads with PlayTerabox.com—unlock the full potential of Terabox today!</p>
+Experience seamless file and video downloads with PlayTerabox.com 
+Unlock the full potential of Terabox today!</p>
       </div>
     </section>
   );
