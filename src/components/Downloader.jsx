@@ -160,30 +160,6 @@ const Downloader = () => {
           </div>
         )}
          
-{/* Ad Code */}
-<div id="ad-container" className="my-4">
-  <div
-    dangerouslySetInnerHTML={{
-      __html: `<!-- JuicyAds v3.0 -->
-<script type="text/javascript" data-cfasync="false" async src="https://poweredby.jads.co/js/jads.js"></script>
-<ins id="1079105" data-width="300" data-height="100"></ins>
-<script type="text/javascript" data-cfasync="false" async>(adsbyjuicy = window.adsbyjuicy || []).push({'adzone':1079105});</script>
-<!--JuicyAds END-->`,
-    }}
-  ></div>
-</div>
-{/* End of Ad Code */}
-  
-{/* Ad Code */}
-<div id="ad-container" className="my-4">
-  <div
-    dangerouslySetInnerHTML={{
-      __html: `<iframe data-aa='2378417' src='//ad.a-ads.com/2378417?size=320x100' style='width:320px; height:100px; border:0px; padding:0; overflow:hidden; background-color: transparent;'></iframe>
-`,
-    }}
-  ></div>
-</div>
-{/* End of Ad Code */}
         {/* Buttons below the video */}
         {videoUrl && (
           <div className="space-y-4">
