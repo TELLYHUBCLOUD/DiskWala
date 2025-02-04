@@ -2,6 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import AdsenseAd from "@/components/AdsenseAd";
 
 const Downloader = () => {
   const router = useRouter();
@@ -99,7 +100,8 @@ const Downloader = () => {
           <h1 className="text-2xl font-extrabold text-center bg-white text-blue-600 rounded-lg shadow-lg p-3">
             PlayTerabox Video Downloader, Player, Embed Videos
           </h1>
-          
+        {/* Banner Ad */}
+<AdsenseAd adSlot="7504515148" />
           <p className="text-sm text-gray-700 mb-6">
             Play and download Terabox videos easily with PlayTerabox. Our tool offers embed videos, skip ads, no login, and just pure video enjoyment!
           </p>
@@ -123,7 +125,6 @@ const Downloader = () => {
             </button>
           </div>
         </div>
-
         {/* Video and Loading Bar */}
         {(isLoading || videoUrl) && (
           <div className="relative space-y-4 mt-4">
@@ -160,13 +161,12 @@ const Downloader = () => {
           </div>
         )}
          
-        {/* Buttons below the video */}
         {videoUrl && (
           <div className="space-y-4">
             <button
               className="block w-full px-6 py-3 bg-orange-500 hover:bg-orange-400 rounded-xl text-white font-bold transition-all duration-200 shadow-lg hover:shadow-orange-500/25"
               onClick={() => {
-                window.open("https://t.me/TeraboxxVideoDownloaderbot");
+                window.open("https://benpoin.online?pub_id=341&id_site=441&name=Download+Now");
               }}
             >
               Download Now
@@ -204,6 +204,8 @@ const Downloader = () => {
   );
 };
 export default Downloader;
+        {/* Banner Ad */}
+<AdsenseAd adSlot="7504515148" />
 // Render the TeraboxScriptSection component correctly
 const TeraboxScriptSection = () => {
   return (
@@ -244,7 +246,8 @@ const TeraboxScriptSection = () => {
         <p className="text-lg text-gray-700 mb-6">
           <strong>6. Easy Sharing:</strong> Shareable links for quick file access by others.
         </p>
-
+{/* Banner Ad */}
+<AdsenseAd adSlot="7504515148" />
         {/* Why PlayTerabox? */}
         <h2 className="text-3xl font-bold mb-6">Why Choose PlayTerabox.com?</h2>
         <p className="text-lg text-gray-700 mb-6">
@@ -328,8 +331,7 @@ const TeraboxScriptSection = () => {
 
 We are committed to respecting the rights of copyright holders and strictly oppose any illegal activities. If you believe this website infringes upon Terabox's rights or have any concerns, please contact us through the email provided on our Contact page. We will address your inquiry promptly and take necessary actions.
 
-Experience seamless file and video downloads with PlayTerabox.com 
-Unlock the full potential of Terabox today!</p>
+Experience seamless file and video downloads with PlayTerabox.com—unlock the full potential of Terabox today!</p>
       </div>
     </section>
   );
