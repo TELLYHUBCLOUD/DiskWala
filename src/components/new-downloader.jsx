@@ -79,5 +79,5 @@ const Downloader = () => {
   );
 };
               {/* Banner Ad */}
-<AdsenseAd adSlot="7504515148" />
+{/* <AdsenseAd adSlot="7504515148" /> */}
 export default Downloader;

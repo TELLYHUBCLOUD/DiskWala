@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
-import AdsenseAd from "@/components/AdsenseAd";
+// import AdsenseAd from "@/components/AdsenseAd";
 
 const VideoPlayer = () => {
   const searchParams = useSearchParams();
@@ -56,8 +56,8 @@ const VideoPlayer = () => {
             </p>
           </div>
         )}
-        {/* Banner Ad */}
-        <AdsenseAd adSlot="7504515148" />
+        {/* Banner Ad
+        <AdsenseAd adSlot="7504515148" /> */}
         {/* Video iframe with correct spacing */}
         <div className="relative overflow-hidden rounded-lg">
           <iframe
@@ -88,8 +88,8 @@ const VideoPlayer = () => {
           </button>
         </div>
       </div>
-        {/* Banner Ad */}
-        <AdsenseAd adSlot="7504515148" />
+        {/* Banner Ad
+        <AdsenseAd adSlot="7504515148" /> */}
       {/* Content Section */}
       <TeraboxScriptSection />
     </div>
@@ -105,14 +105,14 @@ const TeraboxScriptSection = () => {
         🏋️ How to Get Fit in 2025: The Ultimate Health & Fitness Guide
       </h1>
                     {/* Banner Ad */}
-<AdsenseAd adSlot="7504515148" />
+{/* <AdsenseAd adSlot="7504515148" /> */}
       <p className="text-lg text-gray-700 mb-8">
         Staying fit in 2025 requires a combination of smart workouts, proper nutrition, and the latest technology-driven fitness trends. 
         With evolving science and digital tools, achieving optimal health has never been more accessible. This guide covers everything you need 
         to know about staying fit, improving your diet, leveraging technology, and adopting new lifestyle habits for better overall well-being.
       </p>
               {/* Banner Ad */}
-<AdsenseAd adSlot="7504515148" />
+{/* <AdsenseAd adSlot="7504515148" /> */}
       <h3 className="text-2xl font-semibold mb-4">1. Embrace AI-Powered Workouts</h3>
       <p className="text-lg text-gray-700 mb-8">
         AI-driven fitness apps analyze your progress and create personalized workout routines. Platforms like FitAI and SmartCoach provide real-time 
@@ -130,7 +130,7 @@ const TeraboxScriptSection = () => {
         posture, balance, and flexibility, reducing injury risks in daily activities.
       </p>
               {/* Banner Ad */}
-<AdsenseAd adSlot="7504515148" />
+{/* <AdsenseAd adSlot="7504515148" /> */}
       <ul className="list-disc ml-6 text-gray-700 mb-8">
         <li>Bodyweight exercises enhance flexibility and coordination.</li>
         <li>Kettlebell workouts improve core strength and endurance.</li>
@@ -148,7 +148,7 @@ const TeraboxScriptSection = () => {
         <li>Adopt intermittent fasting for improved metabolic health.</li>
       </ul>
               {/* Banner Ad */}
-<AdsenseAd adSlot="7504515148" />
+{/* <AdsenseAd adSlot="7504515148" /> */}
       <h3 className="text-2xl font-semibold mb-4">4. Prioritize Mental Wellness</h3>
       <p className="text-lg text-gray-700 mb-8">
         Fitness isn’t just about the body; mental health plays a crucial role. Meditation, mindfulness, and stress management techniques are essential 
@@ -181,7 +181,7 @@ const TeraboxScriptSection = () => {
         <li>Perform active recovery sessions after intense workouts.</li>
       </ul>
               {/* Banner Ad */}
-<AdsenseAd adSlot="7504515148" />
+{/* <AdsenseAd adSlot="7504515148" /> */}
       <h3 className="text-2xl font-semibold mb-4">7. Try Biohacking for Maximum Performance</h3>
       <p className="text-lg text-gray-700 mb-8">
         Biohacking involves making small lifestyle changes to optimize physical and mental performance. Techniques such as red light therapy, nootropic 
