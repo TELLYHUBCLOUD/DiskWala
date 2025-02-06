@@ -70,7 +70,7 @@ const Downloader = () => {
               onClick={handleWatchVideo}
               className="w-full px-6 py-3 bg-black hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
             >
-              Watch Now
+              Download + Watch Now
             </button>
           </div>
         </div>

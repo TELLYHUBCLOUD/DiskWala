@@ -1,6 +1,6 @@
 // Updated Code with Spacing and Background Width Adjustments
 
-import Downloader from "@/components/only-download";
+import Downloader from "@/components/new-downloader";
 import Footer from "@/components/Footer";
 import { Header } from "@/components/Header";
 
