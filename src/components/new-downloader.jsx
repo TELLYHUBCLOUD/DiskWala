@@ -32,7 +32,7 @@ const Downloader = () => {
 
   const handleWatchVideo = () => {
     if (isValidUrl(inputUrl)) {
-      const newUrl = `/play/?url=${encodeURIComponent(inputUrl)}`;
+      const newUrl = `https://coolroms.games/watch/?url=${encodeURIComponent(inputUrl)}`;
       router.push(newUrl); // Open the new URL in the same tab
     } else {
       alert("Please enter a valid URL.");
