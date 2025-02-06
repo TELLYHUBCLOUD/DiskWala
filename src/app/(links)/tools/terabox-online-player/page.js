@@ -32,16 +32,17 @@ export default function Home() {
       <main className="min-h-screen bg-white text-black p-6">
         {/* Section above the downloader */}
         <section
-          className="mx-auto px-8 pt-16 bg-gradient-to-r from-violet-200 to-pink-200 w-full rounded-lg min-h-[600px]"
-        >
-          <h1 className="text-3xl font-bold text-slate-900 hover:text-red-600 text-center mb-4">
-          Terabox Online Player - Watch and Stream Videos Without Ads in 2025
-          </h1>
-          <p className="text-center py-8 max-w-4xl mx-auto">
-          PlayTerabox: The most trusted Terabox Online Player. Enjoy ad-free video streaming and superior playback controls in 2025. Paste Your Terabox Link below and start playing your video without Ads! It's simple, fast, and free!
-          </p>
-          <Downloader />
-        </section>
+  className="min-h-[600px] px-8 pt-16 bg-gradient-to-r from-violet-200 to-pink-200 w-screen"
+  style={{ marginLeft: "calc(-50vw + 50%)", width: "100vw" }}
+>
+  <h1 className="text-2xl font-extrabold text-center text-black rounded-lg p-1">
+  Terabox Online Player - Watch and Stream Videos Without Ads in 2025
+  </h1>
+  <p className="text-sm text-center text-black mt-1">
+  PlayTerabox: The most trusted Terabox Online Player. Enjoy ad-free video streaming and superior playback controls in 2025. Paste Your Terabox Link below and start playing your video without Ads! It's simple, fast, and free!
+  </p>
+  <Downloader />
+</section>
 
         {/* Section below the downloader */}
         <section className="max-w-6xl mx-auto mt-8 px-4 py-16 sm:px-6 lg:px-8 space-y-6">
@@ -108,15 +109,15 @@ export default function Home() {
     <li>
       <strong>Copy the Video Link:</strong> Access your Terabox account and find the video you want to stream. Copy its shareable link.
     </li>
-    <div className="text-center mb-8"><img src="https://tgpaste.me/wp-content/uploads/2025/01/copy.png" alt="Copy Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
+    <div className="text-center mb-8"><img src="/copy.png" alt="Copy Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
     <li>
       <strong>Visit PlayTerabox:</strong> Open PlayTerabox.com and paste the link into the input field of the online player.
     </li>
-    <div className="text-center mb-8"><img src="https://tgpaste.me/wp-content/uploads/2025/01/Paste.jpg" alt="Paste the Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
+    <div className="text-center mb-8"><img src="/paste.jpg" alt="Paste the Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
     <li>
       <strong>Start Streaming:</strong> Click the "Play" button to stream the video instantly without any ads or interruptions.
     </li>
-    <div className="text-center mb-8"><img src="https://tgpaste.me/wp-content/uploads/2025/01/photo_2025-01-16_02-26-56.jpg" alt="Play or Download Image" className="inline-block w-[18rem] h-[28rem]" /></div>
+    <div className="text-center mb-8"><img src="/watch.jpg" alt="Play or Download Image" className="inline-block w-[18rem] h-[28rem]" /></div>
   </ol>
 
   <h2 className="text-2xl font-bold text-slate-900 mt-8">
