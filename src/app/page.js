@@ -99,7 +99,7 @@ export default function Home() {
         {/* Which terabox? */}
         <h2 className="text-3xl font-bold mb-6">Which Terabox Links Does This Playterabox.com Support?</h2>
 <p className="text-lg text-gray-700 mb-6">
-    Playterabox.com supports all Terabox links, ensuring that you can download the content you want without any problems, regardless of the source.
+    Playterabox supports all Terabox links, ensuring that you can download the content you want without any problems, regardless of the source.
 </p>
 
 <h3 className="text-2xl font-semibold mb-4">Terabox Links We Support</h3>
