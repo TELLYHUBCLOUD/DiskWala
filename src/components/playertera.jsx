@@ -9,10 +9,23 @@ const VideoPlayer = () => {
   const videoUrl = searchParams.get("url");
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const scrollToBottom = () => {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
   };
+
+  useEffect(() => {
+    // Check if mobile on client side
+    if (typeof window !== 'undefined') {
+      setIsMobile(window.innerWidth < 768);
+      const handleResize = () => setIsMobile(window.innerWidth < 768);
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
 
   useEffect(() => {
     // Simulate progress fill-up from 0 to 100% over 7 seconds
@@ -68,7 +81,7 @@ const VideoPlayer = () => {
             frameBorder="0"
             allowFullScreen
             scrolling="no"
-            style={{ height: window.innerWidth < 768 ? "450px" : "600px" }}
+            style={{ height: isMobile ? "450px" : "600px" }}
           />
         </div>
 

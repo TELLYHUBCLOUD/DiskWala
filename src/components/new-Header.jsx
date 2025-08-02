@@ -17,7 +17,9 @@ export function Header() {
 
   const handleHomeClick = (e) => {
     e.preventDefault();
-    window.location.href = "/";
+    if (typeof window !== 'undefined') {
+      window.location.href = "/";
+    }
   };
 
   return (

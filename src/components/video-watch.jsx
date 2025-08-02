@@ -34,7 +34,6 @@ export function VideoWatch({ data, id }) {
                 {/* <div className="absolute bottom-4 left-4 text-white text-lg font-semibold">
                 {data.file_name}
               </div> */}
-                <title>{data.title}</title>
                 <span>Desc :- {data.title}</span>
                 <span className=" inline-block mx-6">
 <a href={"https://visitorbadge.io/status?path="+id}><img src={"https://api.visitorbadge.io/api/combined?path="+id+"&labelColor=%23f47373&countColor=%23d9e3f0&style=flat-square"} /></a>

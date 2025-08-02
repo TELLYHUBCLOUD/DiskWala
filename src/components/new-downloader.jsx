@@ -3,10 +3,14 @@
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import AdsenseAd from "@/components/AdsenseAd";
+import VideoMetadataCard from "@/components/VideoMetadataCard";
 
 const Downloader = () => {
   const router = useRouter();
   const [inputUrl, setInputUrl] = useState("");
+  const [videoData, setVideoData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const SearchParamsWrapper = () => {
     const searchParams = useSearchParams();
@@ -23,28 +27,78 @@ const Downloader = () => {
 
   const handleUrlChange = (e) => {
     const url = e.target.value;
+    setInputUrl(url);
     if (isValidUrl(url)) {
-      setInputUrl(url);
-      const newUrl = `${window.location.pathname}?url=${encodeURIComponent(url)}`;
+      const newUrl = `${typeof window !== 'undefined' ? window.location.pathname : ''}?url=${encodeURIComponent(url)}`;
       router.push(newUrl);
+    }
+  };
+
+  const fetchVideoData = async (url) => {
+    setIsLoading(true);
+    setError(null);
+    setVideoData(null);
+
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+      const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+
+      if (!apiUrl || !apiKey) {
+        throw new Error("Backend API configuration missing");
+      }
+
+      const response = await fetch(`${apiUrl}/client/api?url=${encodeURIComponent(url)}`, {
+        method: 'GET',
+        headers: {
+          'X-API-Key': apiKey,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      if (data.errno !== 0) {
+        throw new Error(data.error || "Failed to fetch video data");
+      }
+
+      setVideoData(data);
+    } catch (err) {
+      console.error("Error fetching video data:", err);
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const handleWatchVideo = () => {
     if (isValidUrl(inputUrl)) {
-      const newUrl = `https://coolroms.games/watch/?url=${encodeURIComponent(inputUrl)}`;
-      router.push(newUrl); // Open the new URL in the same tab
+      fetchVideoData(inputUrl);
     } else {
-      alert("Please enter a valid URL.");
+      alert("Please enter a valid Terabox URL.");
     }
   };
 
   const isValidUrl = (url) => {
     if (!url) return false;
     if (!url.startsWith("http://") && !url.startsWith("https://")) return false;
+
+    // Check if it's a valid Terabox URL
+    const teraboxDomains = [
+      'terabox.com', 'www.terabox.com', 'terabox.app', 'www.terabox.app',
+      '1024terabox.com', 'www.1024terabox.com', 'mirrobox.com', 'www.mirrobox.com',
+      'nephobox.com', 'www.nephobox.com', 'freeterabox.com', 'www.freeterabox.com',
+      '4funbox.com', 'www.4funbox.com', '4funbox.co', 'terabox.fun',
+      'tibibox.com', 'www.tibibox.com', 'momerybox.com', 'www.momerybox.com',
+      'teraboxapp.com', 'www.teraboxapp.com', '1024tera.com', 'www.1024tera.com'
+    ];
+
     try {
-      new URL(url);
-      return true;
+      const urlObj = new URL(url);
+      return teraboxDomains.includes(urlObj.hostname.toLowerCase());
     } catch {
       return false;
     }
@@ -63,17 +117,34 @@ const Downloader = () => {
               type="text"
               value={inputUrl}
               onChange={handleUrlChange}
-              placeholder="Paste your Terabox URL here"
+              placeholder="Paste your Terabox URL here (e.g., https://terabox.com/s/...)"
               className="w-full bg-white text-blue-600/text-slate-900 placeholder-slate-400 rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
             />
             <button
               onClick={handleWatchVideo}
-              className="w-full px-6 py-3 bg-black hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
+              disabled={isLoading || !isValidUrl(inputUrl)}
+              className="w-full px-6 py-3 bg-black hover:bg-blue-500 disabled:bg-gray-400 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
             >
-              Download + Watch Now
+              {isLoading ? "Processing..." : "Get Video"}
             </button>
           </div>
         </div>
+
+        {/* Error Display */}
+        {error && (
+          <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+            <div className="text-red-800 font-semibold">Error:</div>
+            <div className="text-red-600">{error}</div>
+          </div>
+        )}
+
+        {/* Video Metadata Card */}
+        {(isLoading || videoData || error) && (
+          <VideoMetadataCard
+            videoData={videoData}
+            isLoading={isLoading}
+          />
+        )}
       </div>
     </div>
   );

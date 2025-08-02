@@ -3,7 +3,9 @@ import { useEffect } from "react";
 const AdsenseAd = ({ adSlot }) => {
   useEffect(() => {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      if (typeof window !== 'undefined') {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      }
     } catch (e) {
       console.error("AdSense error:", e);
     }
