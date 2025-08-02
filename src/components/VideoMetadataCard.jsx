@@ -143,25 +143,43 @@ const VideoMetadataCard = ({ videoData, isLoading }) => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex space-x-2">
-                  <button
-                    onClick={() => handleDownload(index)}
-                    disabled={downloadLoading[index] || !file.direct_link}
-                    className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white text-sm font-medium rounded-lg transition-all duration-200"
-                  >
-                    <Download className="h-4 w-4" />
-                    <span>{downloadLoading[index] ? "..." : "Download"}</span>
-                  </button>
+                <div className="flex flex-col space-y-2">
+  <div className="flex space-x-2">
+    {/* Real Download */}
+    <button
+      onClick={() => handleDownload(index)}
+      disabled={downloadLoading[index] || !file.direct_link}
+      className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white text-sm font-medium rounded-lg transition-all duration-200"
+    >
+      <Download className="h-4 w-4" />
+      <span>{downloadLoading[index] ? "..." : "Download"}</span>
+    </button>
 
-                  <button
-                    onClick={() => handleStream(index)}
-                    disabled={streamLoading[index] || !file.stream_url}
-                    className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white text-sm font-medium rounded-lg transition-all duration-200"
-                  >
-                    <Play className="h-4 w-4" />
-                    <span>{streamLoading[index] ? "..." : "Stream"}</span>
-                  </button>
-                </div>
+    {/* Real Stream */}
+    <button
+      onClick={() => handleStream(index)}
+      disabled={streamLoading[index] || !file.stream_url}
+      className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white text-sm font-medium rounded-lg transition-all duration-200"
+    >
+      <Play className="h-4 w-4" />
+      <span>{streamLoading[index] ? "..." : "Stream"}</span>
+    </button>
+  </div>
+
+  {/* Ad Download Button */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://acridiumverneukeryoverfill.monster/zqr0k15a163761db9187780a2bdfe7d6ff52de395b4ad?q=free-download",
+        "_blank"
+      )
+    }
+    className="flex items-center justify-center space-x-1 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold rounded-lg transition-all duration-200"
+  >
+    <span>🎬 Free Download (Ad)</span>
+  </button>
+</div>
+
               </div>
             </div>
           ))}
@@ -210,24 +228,36 @@ const VideoMetadataCard = ({ videoData, isLoading }) => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <button
-            onClick={() => handleDownload(selectedFileIndex)}
-            disabled={downloadLoading[selectedFileIndex] || !selectedFile.direct_link}
-            className="flex-1 flex items-center justify-center space-x-2 px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-green-500/25"
-          >
-            <Download className="h-5 w-5" />
-            <span>{downloadLoading[selectedFileIndex] ? "Preparing..." : "Download"}</span>
-          </button>
+  <Link
+    href={`https://${streamPlayer}/player/${files[0].id}`}
+    target="_blank"
+    className="flex-1 text-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-400/25"
+  >
+    ▶️ Stream
+  </Link>
 
-          <button
-            onClick={() => handleStream(selectedFileIndex)}
-            disabled={streamLoading[selectedFileIndex] || !selectedFile.stream_url}
-            className="flex-1 flex items-center justify-center space-x-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
-          >
-            <Play className="h-5 w-5" />
-            <span>{streamLoading[selectedFileIndex] ? "Opening..." : "HD Stream"}</span>
-          </button>
-        </div>
+  <Link
+    href={`${downloadPrefix}${files[0].id}`}
+    target="_blank"
+    className="flex-1 text-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-green-400/25"
+  >
+    ⬇️ Download
+  </Link>
+
+  {/* 💡 Free Download (Ad) Button */}
+  <button
+    onClick={() =>
+      window.open(
+        "https://acridiumverneukeryoverfill.monster/zqr0k15a163761db9187780a2bdfe7d6ff52de395b4ad?q=free-download",
+        "_blank"
+      )
+    }
+    className="flex-1 text-center px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-yellow-400/25"
+  >
+    🎬 Free Download (Ad)
+  </button>
+</div>
+
 
         {/* Additional Info */}
         <div className="bg-gray-50 rounded-lg p-4">
