@@ -16,7 +16,7 @@ const HLSVideoPlayer = () => {
   const API_BASE_URL = 'https://api.ronnieverse.site';
   
   const PROXY_WORKERS = [
-    'https://hls-proxy.himanshumehta720.workers.dev'
+    'https://terabox-hls-proxy-2.terbox-url-fixer.workers.dev',
   ];
 
   const updateStatus = (message, loading = false) => {
@@ -36,66 +36,45 @@ const HLSVideoPlayer = () => {
       currentBlobUrlRef.current = null;
     }
   };
-async function fetchStreamFromStartParam(startParam) {
-        try {
-            let m3u8StreamURL;
 
-            // Check if this is a UUID from bot (8 chars, no http) or a full stream URL from website
-            if (startParam.length === 8 && !startParam.includes('http')) {
-                // This is a UUID from bot - get the stream URL
-                updateStatus('Getting stream URL from bot...', true);
-                console.log("Received UUID from Telegram bot:", startParam);
+  const fetchStreamFromStartParam = async (startParam) => {
+    try {
+      const m3u8StreamURL = decodeURIComponent(startParam);
+      
+      updateStatus('Fetching authenticated stream...', true);
 
-                const streamApiUrl = `http://localhost:9001/stream/${startParam}`;
+      // Hit the get_m3u8_stream_fast endpoint as specified
+      const getm3u8segmentsURL = `${API_BASE_URL}/get_m3u8_stream_fast/${encodeURIComponent(m3u8StreamURL)}`;
+      console.log("Stream URL to hit", getm3u8segmentsURL);
 
-                const streamResponse = await fetch(streamApiUrl);
-                if (!streamResponse.ok) {
-                    throw new Error(`Failed to get stream URL from bot: ${streamResponse.status}`);
-                }
+      const response = await fetch(getm3u8segmentsURL);
 
-                const streamData = await streamResponse.json();
-                m3u8StreamURL = streamData.stream_url;
-                console.log("Retrieved stream URL from bot:", m3u8StreamURL);
-            } else {
-                // This is already a full stream URL from website
-                m3u8StreamURL = startParam;
-                console.log("Direct stream URL from website:", m3u8StreamURL);
-            }
+      if (!response.ok) {
+        throw new Error(`Failed to get stream: ${response.status}`);
+      }
 
-            updateStatus('Fetching authenticated stream...', true);
+      // Get the M3U8 content as text
+      const m3u8Content = await response.text();
 
-            // Now use the stream URL to get M3U8 content
-            const getm3u8segmentsURL = `${API_BASE_URL}/get_m3u8_stream_fast/${encodeURIComponent(m3u8StreamURL)}`;
-            console.log("Stream URL to hit", getm3u8segmentsURL)
+      if (!m3u8Content || !m3u8Content.includes('#EXTM3U')) {
+        console.error('Invalid M3U8 content received:', m3u8Content.substring(0, 100));
+        throw new Error('Invalid M3U8 content received');
+      }
 
-            const response = await fetch(getm3u8segmentsURL);
+      // Create a blob URL from the M3U8 content
+      const blob = new Blob([m3u8Content], { type: 'application/vnd.apple.mpegurl' });
+      const blobUrl = URL.createObjectURL(blob);
 
-            if (!response.ok) {
-                throw new Error(`Failed to get stream: ${response.status}`);
-            }
+      // Store the blob URL for later cleanup
+      currentBlobUrlRef.current = blobUrl;
 
-            // Get the M3U8 content as text
-            const m3u8Content = await response.text();
-
-            if (!m3u8Content || !m3u8Content.includes('#EXTM3U')) {
-                console.error('Invalid M3U8 content received:', m3u8Content.substring(0, 100));
-                throw new Error('Invalid M3U8 content received');
-            }
-
-            // Create a blob URL from the M3U8 content
-            const blob = new Blob([m3u8Content], { type: 'application/vnd.apple.mpegurl' });
-            const blobUrl = URL.createObjectURL(blob);
-
-            // Store the blob URL for later cleanup
-            window.currentBlobUrl = blobUrl;
-
-            return blobUrl;
-        } catch (error) {
-            console.error('Error fetching authenticated stream:', error);
-            updateStatus(`Error: ${error.message}`);
-            return null;
-        }
+      return blobUrl;
+    } catch (error) {
+      console.error('Error fetching authenticated stream:', error);
+      updateStatus(`Error: ${error.message}`);
+      return null;
     }
+  };
 
   const loadVideo = async (streamUrl) => {
     const video = videoRef.current;
