@@ -1,5 +1,5 @@
 "use client";
-import Link from 'next/link';
+
 import { useState } from "react";
 import { Download, Play, FileVideo, Calendar, HardDrive } from "lucide-react";
 
@@ -73,10 +73,11 @@ const VideoMetadataCard = ({ videoData, isLoading }) => {
 
     setStreamLoading(prev => ({ ...prev, [fileIndex]: true }));
     try {
-      // Use player.teraboxdl.site as requested
-      const streamUrl = `https://${streamPlayer}${file.stream_url}`;
+      // Redirect to our internal HLS video player
+      // Pass the stream_url as a URL parameter to our /player page
+      const playerUrl = `/player?url=${encodeURIComponent(file.stream_url)}`;
       if (typeof window !== 'undefined') {
-        window.open(streamUrl, '_blank');
+        window.open(playerUrl, '_blank');
       }
     } catch (error) {
       console.error("Stream error:", error);
@@ -143,43 +144,25 @@ const VideoMetadataCard = ({ videoData, isLoading }) => {
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col space-y-2">
-  <div className="flex space-x-2">
-    {/* Real Download */}
-    <button
-      onClick={() => handleDownload(index)}
-      disabled={downloadLoading[index] || !file.direct_link}
-      className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white text-sm font-medium rounded-lg transition-all duration-200"
-    >
-      <Download className="h-4 w-4" />
-      <span>{downloadLoading[index] ? "..." : "Download"}</span>
-    </button>
+                <div className="flex space-x-2">
+                  <button
+                    onClick={() => handleDownload(index)}
+                    disabled={downloadLoading[index] || !file.direct_link}
+                    className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white text-sm font-medium rounded-lg transition-all duration-200"
+                  >
+                    <Download className="h-4 w-4" />
+                    <span>{downloadLoading[index] ? "..." : "Download"}</span>
+                  </button>
 
-    {/* Real Stream */}
-    <button
-      onClick={() => handleStream(index)}
-      disabled={streamLoading[index] || !file.stream_url}
-      className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white text-sm font-medium rounded-lg transition-all duration-200"
-    >
-      <Play className="h-4 w-4" />
-      <span>{streamLoading[index] ? "..." : "Stream"}</span>
-    </button>
-  </div>
-
-  {/* Ad Download Button */}
-  <button
-    onClick={() =>
-      window.open(
-        "https://acridiumverneukeryoverfill.monster/zqr0k15a163761db9187780a2bdfe7d6ff52de395b4ad?q=free-download",
-        "_blank"
-      )
-    }
-    className="flex items-center justify-center space-x-1 px-3 py-2 bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold rounded-lg transition-all duration-200"
-  >
-    <span>🎬 Free Download (Ad)</span>
-  </button>
-</div>
-
+                  <button
+                    onClick={() => handleStream(index)}
+                    disabled={streamLoading[index] || !file.stream_url}
+                    className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white text-sm font-medium rounded-lg transition-all duration-200"
+                  >
+                    <Play className="h-4 w-4" />
+                    <span>{streamLoading[index] ? "..." : "Stream"}</span>
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -228,36 +211,24 @@ const VideoMetadataCard = ({ videoData, isLoading }) => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-  <Link
-    href={`https://${streamPlayer}/player/${files[0].id}`}
-    target="_blank"
-    className="flex-1 text-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-400/25"
-  >
-    ▶️ Stream
-  </Link>
+          <button
+            onClick={() => handleDownload(selectedFileIndex)}
+            disabled={downloadLoading[selectedFileIndex] || !selectedFile.direct_link}
+            className="flex-1 flex items-center justify-center space-x-2 px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-green-500/25"
+          >
+            <Download className="h-5 w-5" />
+            <span>{downloadLoading[selectedFileIndex] ? "Preparing..." : "Download"}</span>
+          </button>
 
-  <Link
-    href={`${downloadPrefix}${files[0].id}`}
-    target="_blank"
-    className="flex-1 text-center px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-green-400/25"
-  >
-    ⬇️ Download
-  </Link>
-
-  {/* 💡 Free Download (Ad) Button */}
-  <button
-    onClick={() =>
-      window.open(
-        "https://acridiumverneukeryoverfill.monster/zqr0k15a163761db9187780a2bdfe7d6ff52de395b4ad?q=free-download",
-        "_blank"
-      )
-    }
-    className="flex-1 text-center px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-yellow-400/25"
-  >
-    🎬 Free Download (Ad)
-  </button>
-</div>
-
+          <button
+            onClick={() => handleStream(selectedFileIndex)}
+            disabled={streamLoading[selectedFileIndex] || !selectedFile.stream_url}
+            className="flex-1 flex items-center justify-center space-x-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
+          >
+            <Play className="h-5 w-5" />
+            <span>{streamLoading[selectedFileIndex] ? "Opening..." : "HD Stream"}</span>
+          </button>
+        </div>
 
         {/* Additional Info */}
         <div className="bg-gray-50 rounded-lg p-4">
