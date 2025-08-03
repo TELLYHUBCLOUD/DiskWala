@@ -16,16 +16,7 @@ const HLSVideoPlayer = () => {
   const API_BASE_URL = 'https://api.ronnieverse.site';
   
   const PROXY_WORKERS = [
-    'https://terabox-hls-proxy-2.terbox-url-fixer.workers.dev',
-    'https://terabox-hls-proxy-3.eron8318.workers.dev',
-    'https://terabox-hls-proxy-4.ronnie6667770.workers.dev',
-    'https://terabox-hls-proxy-5.eron8319.workers.dev',
-    'https://terabox-hls-proxy-6.eron8321.workers.dev',
-    'https://terabox-hls-proxy-7.eron8322.workers.dev',
-    'https://terabox-hls-proxy-8.ronner786.workers.dev',
-    'https://terabox-hls-proxy-9.ronr6854.workers.dev',
-    'https://terabox-hls-proxy-10.teraboxdownloader3.workers.dev',
-    'https://terabox-hls-proxy-11.ma476503.workers.dev'
+    'https://hls-proxy.himanshumehta720.workers.dev'
   ];
 
   const updateStatus = (message, loading = false) => {
