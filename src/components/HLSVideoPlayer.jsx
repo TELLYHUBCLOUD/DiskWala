@@ -121,8 +121,15 @@ const HLSVideoPlayer = () => {
         xhrSetup: function(xhr, url) {
           console.log('HLS.js requesting URL:', url);
 
+          // For blob URLs or API URLs, access directly (FIRST PRIORITY)
+          if (url.startsWith('blob:') ||
+              url.startsWith('https://api.ronnieverse.site') ||
+              url.startsWith('https://ronnieverse.site')) {
+            console.log('Direct access for blob/API URL:', url);
+            xhr.open('GET', url, true);
+          }
           // For TeraBox/freeterabox domains, USE ROUND-ROBIN WORKER
-          if (url.includes('freeterabox.com') ||
+          else if (url.includes('freeterabox.com') ||
               url.includes('1024tera.com') ||
               url.includes('terabox.com')) {
 
@@ -130,13 +137,6 @@ const HLSVideoPlayer = () => {
             const newUrl = `${proxyWorker}/?url=${encodeURIComponent(url)}`;
             console.log('Proxying TeraBox URL:', newUrl);
             xhr.open('GET', newUrl, true);
-          }
-          // For blob URLs or API URLs, access directly
-          else if (url.startsWith('blob:') ||
-              url.startsWith('https://api.ronnieverse.site') ||
-              url.startsWith('https://ronnieverse.site')) {
-            console.log('Direct access for blob/API URL:', url);
-            xhr.open('GET', url, true);
           }
           // For all other URLs, use round-robin proxying
           else {
