@@ -47,7 +47,13 @@ const HLSVideoPlayer = () => {
       const getm3u8segmentsURL = `${API_BASE_URL}/get_m3u8_stream_fast/${encodeURIComponent(m3u8StreamURL)}`;
       console.log("Stream URL to hit", getm3u8segmentsURL);
 
-      const response = await fetch(getm3u8segmentsURL);
+      const response = await fetch(getm3u8segmentsURL, {
+        headers: {
+          'Referer': window.location.href,
+        }
+      });
+
+      console.log('Request sent with referer:', window.location.href);
 
       if (!response.ok) {
         throw new Error(`Failed to get stream: ${response.status}`);
@@ -61,8 +67,26 @@ const HLSVideoPlayer = () => {
         throw new Error('Invalid M3U8 content received');
       }
 
-      // Create a blob URL from the M3U8 content
-      const blob = new Blob([m3u8Content], { type: 'application/vnd.apple.mpegurl' });
+      console.log('Raw M3U8 content preview:', m3u8Content.substring(0, 500));
+
+      // Process M3U8 content to ensure all URLs are absolute
+      const lines = m3u8Content.split('\n');
+      const processedLines = lines.map(line => {
+        const trimmedLine = line.trim();
+        // If line is a segment URL (not a comment line starting with #) and not already absolute
+        if (!trimmedLine.startsWith('#') && trimmedLine &&
+            !trimmedLine.startsWith('http') && !trimmedLine.startsWith('blob:')) {
+          // This shouldn't happen with TeraBox, but just in case, log it
+          console.warn('Found relative URL in M3U8:', trimmedLine);
+        }
+        return line;
+      });
+
+      const processedM3u8Content = processedLines.join('\n');
+      console.log('Processed M3U8 content preview:', processedM3u8Content.substring(0, 500));
+
+      // Create a blob URL from the processed M3U8 content
+      const blob = new Blob([processedM3u8Content], { type: 'application/vnd.apple.mpegurl' });
       const blobUrl = URL.createObjectURL(blob);
 
       // Store the blob URL for later cleanup
@@ -95,6 +119,8 @@ const HLSVideoPlayer = () => {
 
       hlsRef.current = new Hls({
         xhrSetup: function(xhr, url) {
+          console.log('HLS.js requesting URL:', url);
+
           // For TeraBox/freeterabox domains, USE ROUND-ROBIN WORKER
           if (url.includes('freeterabox.com') ||
               url.includes('1024tera.com') ||
@@ -102,18 +128,21 @@ const HLSVideoPlayer = () => {
 
             const proxyWorker = getNextProxyWorker();
             const newUrl = `${proxyWorker}/?url=${encodeURIComponent(url)}`;
+            console.log('Proxying TeraBox URL:', newUrl);
             xhr.open('GET', newUrl, true);
           }
           // For blob URLs or API URLs, access directly
           else if (url.startsWith('blob:') ||
               url.startsWith('https://api.ronnieverse.site') ||
               url.startsWith('https://ronnieverse.site')) {
+            console.log('Direct access for blob/API URL:', url);
             xhr.open('GET', url, true);
           }
           // For all other URLs, use round-robin proxying
           else {
             const proxyWorker = getNextProxyWorker();
             const newUrl = `${proxyWorker}/?url=${encodeURIComponent(url)}`;
+            console.log('Proxying other URL:', newUrl);
             xhr.open('GET', newUrl, true);
           }
           xhr.withCredentials = false;
