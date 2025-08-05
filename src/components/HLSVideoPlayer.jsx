@@ -16,7 +16,7 @@ const HLSVideoPlayer = () => {
   const API_BASE_URL = 'https://api.ronnieverse.site';
   
   const PROXY_WORKERS = [
-    'https://terabox-hls-proxy-2.terbox-url-fixer.workers.dev',
+    'https://hls-proxy.himanshumehta720.workers.dev'
   ];
 
   const updateStatus = (message, loading = false) => {
@@ -125,7 +125,7 @@ const HLSVideoPlayer = () => {
         manifestLoadingRetryDelay: 1000
       });
 
-      hlsRef.current.on(Hls.Events.ERROR, function(event, data) {
+      hlsRef.current.on(Hls.Events.ERROR, function(_, data) {
         if (data.fatal) {
           console.error('Fatal HLS error:', data);
           updateStatus(`Loading error: ${data.type}. Please try refreshing.`);
