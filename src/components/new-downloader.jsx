@@ -4,6 +4,7 @@ import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import AdsenseAd from "@/components/AdsenseAd";
 import VideoMetadataCard from "@/components/VideoMetadataCard";
+import { sendEncryptedRequest } from "@/utils/encryption";
 
 const Downloader = () => {
   const router = useRouter();
@@ -42,29 +43,18 @@ const Downloader = () => {
     try {
       const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
       const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+      const secretKey = process.env.NEXT_PUBLIC_ENCRYPTION_SECRET_KEY;
 
       if (!apiUrl || !apiKey) {
         throw new Error("Backend API configuration missing");
       }
 
-      const response = await fetch(`${apiUrl}/client/api?url=${encodeURIComponent(url)}`, {
-        method: 'GET',
-        headers: {
-          'X-API-Key': apiKey,
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+      if (!secretKey) {
+        throw new Error("Encryption secret key missing");
       }
 
-      const data = await response.json();
-
-      if (data.errno !== 0) {
-        throw new Error(data.error || "Failed to fetch video data");
-      }
-
+      // Use the new v2 encrypted API
+      const data = await sendEncryptedRequest(apiUrl, url, apiKey, secretKey);
       setVideoData(data);
     } catch (err) {
       console.error("Error fetching video data:", err);
