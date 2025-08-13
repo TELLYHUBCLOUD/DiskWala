@@ -74,7 +74,9 @@ const Downloader = () => {
 
   const isValidUrl = (url) => {
     if (!url) return false;
-    if (!url.startsWith("http://") && !url.startsWith("https://")) return false;
+    if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "https://" + url;
+    }
 
     // Check if it's a valid Terabox URL
     const teraboxDomains = [
@@ -83,7 +85,8 @@ const Downloader = () => {
       'nephobox.com', 'www.nephobox.com', 'freeterabox.com', 'www.freeterabox.com',
       '4funbox.com', 'www.4funbox.com', '4funbox.co', 'terabox.fun',
       'tibibox.com', 'www.tibibox.com', 'momerybox.com', 'www.momerybox.com',
-      'teraboxapp.com', 'www.teraboxapp.com', '1024tera.com', 'www.1024tera.com'
+      'teraboxapp.com', 'www.teraboxapp.com', '1024tera.com', 'www.1024tera.com',
+      'terasharelink.com', 'www.terasharelink.com', 'terafileshare.com', 'www.terafileshare.com'
     ];
 
     try {
