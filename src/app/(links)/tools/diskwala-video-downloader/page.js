@@ -9,18 +9,19 @@ export const metadata = {
   description:
     "Easily download and watch Diskwala.com videos online with PlayTeraBox.com. Enjoy fast, secure playback and offline saving with our Diskwala video downloader.",
   keywords: [
-    "terabox", "terabox online player", "terabox player", 
-     "terabox direct download", "terabox direct videos", 
-     "terabox link converter", "terabox bypass", 
-      "terabox video download", "stream terabox videos online", "play terabox videos", "ad-free terabox player"
+    "diskwala", "diskwala online player", "diskwala player",
+"diskwala direct download", "diskwala direct videos",
+"diskwala link converter", "diskwala bypass",
+"diskwala video download", "stream diskwala videos online", "play diskwala videos", "ad-free diskwala player"
+
   ],
   openGraph: {
     title: "Diskwala Video Downloader & Online Player – Play and Save Diskwala Videos on PlayTeraBox.com",
     description: "Easily download and watch Diskwala.com videos online with PlayTeraBox.com. Enjoy fast, secure playback and offline saving with our Diskwala video downloader.",
     type: "website",
-    url: "https://playterabox.com/tools/terabox-online-player",
+    url: "https://playterabox.com/tools/diskwala-video-downloader",
     site_name: "PlayTerabox",
-    images: ["/og.jpg"],
+    images: ["/diskwala-icon.png"],
   },
   robots: "index, follow",
 };
