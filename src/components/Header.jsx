@@ -8,6 +8,7 @@ export const links = [
   { name: "Home", slug: "/" },
   { name: "Terabox Downloader", slug: "/tools/terabox-downloader" },
   { name: "Terabox Online Player", slug: "/tools/terabox-online-player" },
+  { name: "Diskwala Video Downloader", slug: "/diskwala-video-downloader" },
   { name: "About", slug: "/about-us" },
   { name: "Contact", slug: "/contact-us" },
   { name: "DMCA", slug: "/dmca" },
