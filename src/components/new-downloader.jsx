@@ -86,7 +86,8 @@ const Downloader = () => {
       '4funbox.com', 'www.4funbox.com', '4funbox.co', 'terabox.fun',
       'tibibox.com', 'www.tibibox.com', 'momerybox.com', 'www.momerybox.com',
       'teraboxapp.com', 'www.teraboxapp.com', '1024tera.com', 'www.1024tera.com',
-      'terasharelink.com', 'www.terasharelink.com', 'terafileshare.com', 'www.terafileshare.com'
+      'terasharelink.com', 'www.terasharelink.com', 'terafileshare.com', 'www.terafileshare.com',
+      'teraboxlink.com', 'www.teraboxlink.com'
     ];
 
     try {
