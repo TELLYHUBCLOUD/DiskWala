@@ -90,15 +90,15 @@ export default function Home() {
         <p className="text-lg text-gray-700 mb-6">
           <strong>Step 1: Copy the Video Link:</strong> Go to your Terabox account and copy the link to the video you want.
         </p>
-        <div className="text-center mb-8"><img src="/copy.png" alt="Copy Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
+        <div className="text-center mb-8"><img src="/copyw.webp" alt="Copy Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
         <p className="text-lg text-gray-700 mb-6">
           <strong>Step 2: Paste the Link:</strong> Visit Playterabox.com and paste the link into the input field.
         </p>
-        <div className="text-center mb-8"><img src="/paste.jpg" alt="Paste the Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
+        <div className="text-center mb-8"><img src="/pastew.webp" alt="Paste the Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
         <p className="text-lg text-gray-700 mb-6">
           <strong>Step 3: Play or Download:</strong> Click On Watch Now Button. The Video starts playing below, You can also download the video.
         </p>
-        <div className="text-center mb-8"><img src="/watch.jpg" alt="Play or Download Image" className="inline-block w-[18rem] h-[28rem]" /></div>
+        <div className="text-center mb-8"><img src="/watchw.webp" alt="Play or Download Image" className="inline-block w-[18rem] h-[28rem]" /></div>
         {/* Which terabox? */}
         <h2 className="text-3xl font-bold mb-6">Which Terabox Links Does This Playterabox.com Support?</h2>
 <p className="text-lg text-gray-700 mb-6">
