@@ -308,7 +308,8 @@ const Downloader = () => {
             {isLoading ? "Processing..." : "Get Video"}
           </button>
         </div>
-
+      {/* AdSense ad here */}
+      <AdsenseAd adSlot="1048373308" />
         {/* Error */}
         {error && (
           <div className="bg-red-50 border border-red-200 rounded-xl p-4">

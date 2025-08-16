@@ -34,6 +34,8 @@ export default function Home() {
     Play and download Terabox videos easily with PlayTerabox. With Our tool you can skip ads, no login, and just pure video enjoyment! It's simple, fast, and free!
   </p>
   <Downloader />
+        {/* AdSense ad here */}
+      <AdsenseAd adSlot="1048373308" />
 </section>
 
         {/* Section below the downloader */}
