@@ -1,5 +1,6 @@
 import Downloader from "@/components/new-downloader";
 import Footer from "@/components/Footer";
+import AdsenseAd from "@/components/AdsenseAd";
 import { Header } from "@/components/Header";
 
 export const metadata = {
