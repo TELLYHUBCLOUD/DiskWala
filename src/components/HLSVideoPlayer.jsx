@@ -208,7 +208,7 @@ const HLSVideoPlayer = () => {
       }
     }
 
-    updateStatus('No stream URL provided');
+    updateStatus('Server Is Down Right Now, Only Download Option is Working');
   };
 
   const toggleTheme = () => {
