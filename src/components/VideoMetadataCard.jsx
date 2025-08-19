@@ -273,7 +273,7 @@ const VideoMetadataCard = ({ videoData, isLoading }) => {
   const UNLOCK_DURATION_HOURS = 12;
 
   // Replace this with your actual ad link
-  const AD_URL = "https://www.profitableratecpm.com/ffh9hsd52?key=5d61b42be252572d45b9bceaf0a155ae";
+  const AD_URL = "https://backgameembroilssuntan.monster/f4rLk12320cb4bf12481c08b4d9c700aaa7ffa51c56b5?q={download-now}";
 
   useEffect(() => {
     const unlockData = localStorage.getItem("adUnlockData");
