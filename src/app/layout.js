@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
               "@type": "WebSite",
               "name": "TheDiskWala",
               "url": "https://thediskwala.com",
-              "description": "Play and download Terabox videos easily with TheDiskWala. Our tool is 100% Working and offers embed videos, skip ads, no login, and just pure video enjoyment!",
+              "description": "Easily download and watch Diskwala.com videos online with TheDiskWala.com. Enjoy fast, secure playback and offline saving with our Diskwala video downloader.",
               "publisher": {
                 "@type": "Organization",
                 "name": "TheDiskWala"
