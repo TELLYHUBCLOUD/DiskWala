@@ -38,7 +38,7 @@ const Content = () => {
           <strong>DMCA Policy</strong>
         </p>
         <p>
-          Welcome to teradownloader.com's DMCA Policy page. Here, we outline our
+          Welcome to TheDiskWala.com's DMCA Policy page. Here, we outline our
           procedures for reporting copyright violations and handling repeat
           infringements.
         </p>
@@ -85,7 +85,7 @@ const Content = () => {
           This website is not an official Terabox website and we are not
           associated with terabox.app or Flextech Inc.
         </p>
-        <p>© 2024 - Present TeraDownloader.com All rights reserved.</p>
+        <p>© 2024 - Present TheDiskWala.com All rights reserved.</p>
       </section>
 
       <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-6 mt-8">

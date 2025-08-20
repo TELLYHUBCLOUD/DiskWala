@@ -33,10 +33,10 @@ export default function Home() {
       <main className="min-h-screen bg-white text-black p-6">
         {/* Section above the downloader */}
         <section
-  className="min-h-[600px] px-8 pt-16 bg-gradient-to-r from-lime-50 to-green-50 w-screen"
+  className="min-h-[600px] px-8 pt-16 bg-gradient-to-r from-white-50 to-white-50 w-screen"
   style={{ marginLeft: "calc(-50vw + 50%)", width: "100vw" }}
 >
-  <h1 className="text-2xl font-extrabold text-center text-black rounded-lg p-1">
+  <h1 className="text-3xl font-extrabold text-center text-black rounded-lg p-1">
   Diskwala Video Downloader & Online Player
   </h1>
   <p className="text-sm text-center text-black mt-1">
@@ -54,7 +54,7 @@ export default function Home() {
 <p className="text-lg text-slate-900">
   Diskwala is not just another cloud storage platform. It’s a revolutionary digital hub designed for anyone who needs a secure, reliable, and easy-to-use solution for storing, sharing, and streaming files.
 </p>
-<div className="text-center mb-8"><img src="/diskwala-icon.png" alt="Diskwala.com Icon" className="inline-block w-[24rem] h-[24rem]" /></div>
+<div className="text-center mb-8"><img src="/diskwala-logo.png" alt="Diskwala.com Icon" className="inline-block w-[24rem] h-[7rem]" /></div>
 <h3 className="text-2xl font-bold text-slate-900 mt-8">
   Key Features of Diskwala.com
 </h3>
