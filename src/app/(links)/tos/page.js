@@ -3,15 +3,15 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import React from "react";
 
 export const metadata = {
-  title: "Terms and Conditions - PlayTerabox",
+  title: "Terms and Conditions - TheDiskWala",
   description:
-    "Welcome to Playterabox.com! These terms and conditions outline the rules and regulations for the use of our Website.",
+    "Welcome to thediskwala.com! These terms and conditions outline the rules and regulations for the use of our Website.",
   robots: "index, follow",
   openGraph: {
-    title: "Terms and Conditions - PlayTerabox",
+    title: "Terms and Conditions - TheDiskWala",
     description: "Terms and Conditions Policy page.",
     type: "website",
-    url: "https://playterabox.com/tos",
+    url: "https://thediskwala.com/tos",
     images: ["/og.jpg"],
   },
 };
@@ -32,47 +32,47 @@ const Content = () => {
     <div className="space-y-6">
       <section className="space-y-4">
         <p className="text-lg leading-relaxed">
-          Welcome to Playterabox.com! These terms and conditions outline the rules and regulations for the use of our Website.
+          Welcome to thediskwala.com! These terms and conditions outline the rules and regulations for the use of our Website.
         </p>
         <div>
           <div>
             <p>
               <strong>Terms and Conditions</strong>
             </p>
-            <p>Welcome to Playterabox.com!</p>
+            <p>Welcome to thediskwala.com!</p>
             <p>
               These terms and conditions outline the rules and regulations for the
-              use of Playterabox.com's Website, located at{" "}
-              <a href="https://Playterabox.com">https://Playterabox.com</a>.
+              use of thediskwala.com's Website, located at{" "}
+              <a href="https://thediskwala.com">https://thediskwala.com</a>.
             </p>
             <p>
               By accessing this website, we assume you accept these terms and
-              conditions. Do not continue to use Playterabox.com if you do not agree
+              conditions. Do not continue to use thediskwala.com if you do not agree
               to all of the terms and conditions stated on this page.
             </p>
             <p>
               <strong>Cookies</strong>
             </p>
             <p>
-              We employ the use of cookies. By accessing Playterabox.com, you agreed
-              to use cookies in agreement with Playterabox.com's Privacy Policy.
+              We employ the use of cookies. By accessing thediskwala.com, you agreed
+              to use cookies in agreement with thediskwala.com's Privacy Policy.
             </p>
             <p>
               <strong>License</strong>
             </p>
             <p>
-              Unless otherwise stated, Playterabox.com and/or its licensors own the
-              intellectual property rights for all material on Playterabox.com. All
+              Unless otherwise stated, thediskwala.com and/or its licensors own the
+              intellectual property rights for all material on thediskwala.com. All
               intellectual property rights are reserved. You may access this from
-              Playterabox.com for your own personal use subjected to restrictions set
+              thediskwala.com for your own personal use subjected to restrictions set
               in these terms and conditions.
             </p>
             <p>You must not:</p>
             <ul>
-              <li>Republish material from Playterabox.com</li>
-              <li>Sell, rent, or sub-license material from Playterabox.com</li>
-              <li>Reproduce, duplicate or copy material from Playterabox.com</li>
-              <li>Redistribute content from Playterabox.com</li>
+              <li>Republish material from thediskwala.com</li>
+              <li>Sell, rent, or sub-license material from thediskwala.com</li>
+              <li>Reproduce, duplicate or copy material from thediskwala.com</li>
+              <li>Redistribute content from thediskwala.com</li>
             </ul>
             <p>
               <strong>Comments</strong>
@@ -80,17 +80,17 @@ const Content = () => {
             <p>
               Parts of this website offer users the opportunity to post and
               exchange opinions and information in certain areas of the website.
-              Playterabox.com does not filter, edit, publish, or review Comments
+              thediskwala.com does not filter, edit, publish, or review Comments
               prior to their presence on the website. Comments do not reflect the
-              views and opinions of Playterabox.com, its agents, and/or affiliates.
+              views and opinions of thediskwala.com, its agents, and/or affiliates.
               Comments reflect the views and opinions of the person who posts
-              them. To the extent permitted by applicable laws, Playterabox.com shall
+              them. To the extent permitted by applicable laws, thediskwala.com shall
               not be liable for the Comments or for any liability, damages, or
               expenses caused and/or suffered as a result of any use of and/or
               posting of and/or appearance of the Comments on this website.
             </p>
             <p>
-              Playterabox.com reserves the right to monitor all Comments and to
+              thediskwala.com reserves the right to monitor all Comments and to
               remove any Comments that can be considered inappropriate, offensive,
               or cause a breach of these Terms and Conditions.
             </p>
@@ -207,7 +207,7 @@ const Content = () => {
           This website is not an official Terabox website and we are not associated with terabox.app or Flextech Inc.
         </p>
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          © 2024 - Present Playterabox.com All rights reserved.
+          © 2024 - Present thediskwala.com All rights reserved.
         </p>
       </div>
     </div>

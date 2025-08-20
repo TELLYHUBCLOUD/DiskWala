@@ -3,15 +3,15 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import React from "react";
 
 export const metadata = {
-  title: "Contact Us - PlayTerabox",
+  title: "Contact Us - TheDiskWala",
   description:
-    "Get in Touch With PlayTerabox Team Now.",
+    "Get in Touch With TheDiskWala Team Now.",
   robots: "index, follow",
   openGraph: {
-    title: "Contact Us - PlayTerabox",
-    description: "Get in Touch With PlayTerabox Team Now.",
+    title: "Contact Us - TheDiskWala",
+    description: "Get in Touch With TheDiskWala Team Now.",
     type: "website",
-    url: "https://playterabox.com/contact-us",
+    url: "https://thediskwala.com/contact-us",
     images: ["/og.jpg"],
   },
 };

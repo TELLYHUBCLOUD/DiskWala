@@ -49,12 +49,12 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "PlayTerabox",
-              "url": "https://playterabox.com",
-              "description": "Play and download Terabox videos easily with PlayTerabox. Our tool is 100% Working and offers embed videos, skip ads, no login, and just pure video enjoyment!",
+              "name": "TheDiskWala",
+              "url": "https://thediskwala.com",
+              "description": "Play and download Terabox videos easily with TheDiskWala. Our tool is 100% Working and offers embed videos, skip ads, no login, and just pure video enjoyment!",
               "publisher": {
                 "@type": "Organization",
-                "name": "PlayTerabox"
+                "name": "TheDiskWala"
               }
             })
           }}

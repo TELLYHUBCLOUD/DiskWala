@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import { Header } from "@/components/Header";
 
 export const metadata = {
-  title: "Diskwala Video Downloader & Online Player – Play and Save Diskwala Videos on PlayTeraBox.com",
+  title: "Diskwala Video Downloader & Online Player – Play and Save Diskwala Videos on thediskwala.com",
   description:
-    "Easily download and watch Diskwala.com videos online with PlayTeraBox.com. Enjoy fast, secure playback and offline saving with our Diskwala video downloader.",
+    "Easily download and watch Diskwala.com videos online with thediskwala.com. Enjoy fast, secure playback and offline saving with our Diskwala video downloader.",
   keywords: [
     "diskwala", "diskwala online player", "diskwala player",
 "diskwala direct download", "diskwala direct videos",
@@ -16,11 +16,11 @@ export const metadata = {
 
   ],
   openGraph: {
-    title: "Diskwala Video Downloader & Online Player – Play and Save Diskwala Videos on PlayTeraBox.com",
-    description: "Easily download and watch Diskwala.com videos online with PlayTeraBox.com. Enjoy fast, secure playback and offline saving with our Diskwala video downloader.",
+    title: "Diskwala Video Downloader & Online Player – Play and Save Diskwala Videos on thediskwala.com",
+    description: "Easily download and watch Diskwala.com videos online with thediskwala.com. Enjoy fast, secure playback and offline saving with our Diskwala video downloader.",
     type: "website",
-    url: "https://playterabox.com/tools/diskwala-video-downloader",
-    site_name: "PlayTerabox",
+    url: "https://thediskwala.com/tools/diskwala-video-downloader",
+    site_name: "TheDiskWala",
     images: ["/diskwala-icon.png"],
   },
   robots: "index, follow",
@@ -40,7 +40,7 @@ export default function Home() {
   Diskwala Video Downloader & Online Player
   </h1>
   <p className="text-sm text-center text-black mt-1">
-  Easily download and watch Diskwala.com videos online with PlayTeraBox.com.
+  Easily download and watch Diskwala.com videos online with thediskwala.com.
   </p>
   <Downloader />
 </section>
@@ -103,21 +103,21 @@ export default function Home() {
   </li>
 </ul>
 <p className="text-lg text-slate-900 mt-4">
-  However, Diskwala doesn’t always make it straightforward to download hosted videos directly — and that’s where <strong>PlayTeraBox.com</strong> comes in.
+  However, Diskwala doesn’t always make it straightforward to download hosted videos directly — and that’s where <strong>thediskwala.com</strong> comes in.
 </p>
 
 <h2 className="text-2xl font-bold text-slate-900 mt-8">
-  PlayTeraBox.com – The Ultimate Diskwala Video Downloader
+  thediskwala.com – The Ultimate Diskwala Video Downloader
 </h2>
 <p className="text-lg text-slate-900">
-  PlayTeraBox.com is an online platform that allows you to download videos from Diskwala.com quickly and securely. It also includes a built-in online video player, so you can watch your videos instantly without downloading them to your device.
+  thediskwala.com is an online platform that allows you to download videos from Diskwala.com quickly and securely. It also includes a built-in online video player, so you can watch your videos instantly without downloading them to your device.
 </p>
 <p className="text-lg text-slate-900">
-  Whether you’re using a desktop, tablet, or mobile phone, PlayTeraBox.com is optimized for speed, privacy, and high-quality playback.
+  Whether you’re using a desktop, tablet, or mobile phone, thediskwala.com is optimized for speed, privacy, and high-quality playback.
 </p>
 
 <h2 className="text-2xl font-bold text-slate-900 mt-8">
-  How to Download Diskwala Videos Using PlayTeraBox.com
+  How to Download Diskwala Videos Using thediskwala.com
 </h2>
 <p className="text-lg text-slate-900">
   Downloading videos is straightforward. Here’s the step-by-step process:
@@ -128,7 +128,7 @@ export default function Home() {
   </li>
       <div className="text-center mb-8"><img src="/copy-the-link.png" alt="Open Diskwala.com Image" className="inline-block w-[28rem] h-[18rem]" /></div>
   <li>
-    <strong>Paste the Link into PlayTeraBox.com –</strong> Visit PlayTeraBox.com and locate the Diskwala video downloader section. Paste the video link into the input box.
+    <strong>Paste the Link into thediskwala.com –</strong> Visit thediskwala.com and locate the Diskwala video downloader section. Paste the video link into the input box.
   </li>
       <div className="text-center mb-8"><img src="/paste-diskwala.png" alt="Paste the Link Image" className="inline-block w-[18rem] h-[28rem]" /></div>
   <li>
@@ -136,7 +136,7 @@ export default function Home() {
   </li>
       <div className="text-center mb-8"><img src="/fake-thumbnail.jpg" alt="Quality option on Diskwala Player" className="inline-block w-[28rem] h-[18rem]" /></div>
   <li>
-    <strong>Click Download –</strong> PlayTeraBox.com will process the link and give you a direct download button. So click it to start downloading the video directly to your device.
+    <strong>Click Download –</strong> thediskwala.com will process the link and give you a direct download button. So click it to start downloading the video directly to your device.
   </li>
       <div className="text-center mb-8"><img src="/download-video.png" alt="Paste the Link Image" className="inline-block w-[18rem] h-[36rem]" /></div>
 </ol>
@@ -144,13 +144,13 @@ export default function Home() {
   Final Thoughts
 </h2>
 <p className="text-lg text-slate-900">
-  Diskwala.com has transformed the way people store, share, and watch videos, offering unlimited storage and fast streaming in a secure environment. But with PlayTeraBox.com, users now have complete control over their Diskwala video experience — from instant online playback to offline downloads in HD quality.
+  Diskwala.com has transformed the way people store, share, and watch videos, offering unlimited storage and fast streaming in a secure environment. But with thediskwala.com, users now have complete control over their Diskwala video experience — from instant online playback to offline downloads in HD quality.
 </p>
 <p className="text-lg text-slate-900">
-  Whether you’re a casual viewer, a student saving educational videos, or a professional archiving important files, the combination of Diskwala and PlayTeraBox.com is unbeatable.
+  Whether you’re a casual viewer, a student saving educational videos, or a professional archiving important files, the combination of Diskwala and thediskwala.com is unbeatable.
 </p>
 <p className="text-lg text-slate-900">
-  Start using PlayTeraBox.com today and enjoy the ultimate Diskwala video downloader and player experience.
+  Start using thediskwala.com today and enjoy the ultimate Diskwala video downloader and player experience.
 </p>
 </section>
 

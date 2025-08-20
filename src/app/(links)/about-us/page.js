@@ -3,15 +3,15 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import React from "react";
 
 export const metadata = {
-  title: "About Us - PlayTerabox",
+  title: "About Us - TheDiskWala",
   description:
-    "Learn more about PlayTerabox, the ultimate Terabox video downloader and player.",
+    "Learn more about TheDiskWala, the ultimate Terabox video downloader and player.",
   robots: "noindex, nofollow",
   openGraph: {
-    title: "About Us - PlayTerabox: Video Downloader",
+    title: "About Us - TheDiskWala: Video Downloader",
     description: "Discover who we are and our mission.",
     type: "website",
-    url: "https://playterabox.com/about-us",
+    url: "https://thediskwala.com/about-us",
     images: ["/og.jpg"],
   },
 };
@@ -32,11 +32,11 @@ const Content = () => {
     <>
       <div>
         <p className=" p-1 m-2 ">
-          At playterabox.com, accessible from{" "}
-          <a href="https://playterabox.com">https://playterabox.com</a>, one of our
+          At thediskwala.com, accessible from{" "}
+          <a href="https://thediskwala.com">https://thediskwala.com</a>, one of our
           main priorities is the privacy of our visitors. This Privacy Policy
           document contains types of information that is collected and recorded
-          by playterabox.com and how we use it.
+          by thediskwala.com and how we use it.
         </p>
         <p className=" p-1 m-2 ">
           If you have additional questions or require more information about our
@@ -45,7 +45,7 @@ const Content = () => {
         <p className=" p-1 m-2 ">
           This Privacy Policy applies only to our online activities and is valid
           for visitors to our website with regards to the information that they
-          shared and/or collect in playterabox.com. This policy is not applicable
+          shared and/or collect in thediskwala.com. This policy is not applicable
           to any information collected offline or via channels other than this
           website.
         </p>
@@ -99,7 +99,7 @@ const Content = () => {
           <strong className="text-2xl">Log Files</strong>
         </p>
         <p className=" p-1 m-2 ">
-          playterabox.com follows a standard procedure of using log files. These
+          thediskwala.com follows a standard procedure of using log files. These
           files log visitors when they visit websites. All hosting companies do
           this and a part of hosting services' analytics. The information
           collected by log files includes internet protocol (IP) addresses,
@@ -114,7 +114,7 @@ const Content = () => {
           <strong className="text-2xl">Cookies</strong>
         </p>
         <p className=" p-1 m-2 ">
-          Like any other website, playterabox.com uses "cookies". These cookies are
+          Like any other website, thediskwala.com uses "cookies". These cookies are
           used to store information including visitors' preferences, and the
           pages on the website that the visitor accessed or visited. The
           information is used to optimize the users' experience by customizing
@@ -145,26 +145,26 @@ const Content = () => {
         </p>
         <p className=" p-1 m-2 ">
           You may consult this list to find the Privacy Policy for each of the
-          advertising partners of playterabox.com.
+          advertising partners of thediskwala.com.
         </p>
         <p className=" p-1 m-2 ">
           Third-party ad servers or ad networks use technologies like cookies,
           JavaScript, or Web Beacons that are used in their respective
-          advertisements and links that appear on playterabox.com, which are sent
+          advertisements and links that appear on thediskwala.com, which are sent
           directly to users' browsers. They automatically receive your IP
           address when this occurs. These technologies are used to measure the
           effectiveness of their advertising campaigns and/or to personalize the
           advertising content that you see on websites that you visit.
         </p>
         <p className=" p-1 m-2 ">
-          Note that playterabox.com has no access to or control over these cookies
+          Note that thediskwala.com has no access to or control over these cookies
           that are used by third-party advertisers.
         </p>
         <p className=" p-1 m-2 ">
           <strong className="text-2xl">Third Party Privacy Policies</strong>
         </p>
         <p className=" p-1 m-2 ">
-          playterabox.com's Privacy Policy does not apply to other advertisers or
+          thediskwala.com's Privacy Policy does not apply to other advertisers or
           websites. Thus, we are advising you to consult the respective Privacy
           Policies of these third-party ad servers for more detailed
           information. It may include their practices and instructions about how
@@ -254,7 +254,7 @@ const Content = () => {
           participate in, and/or monitor and guide their online activity.
         </p>
         <p className=" p-1 m-2 ">
-          playterabox.com does not knowingly collect any Personal Identifiable
+          thediskwala.com does not knowingly collect any Personal Identifiable
           Information from children under the age of 13. If you think that your
           child provided this kind of information on our website, we strongly
           encourage you to contact us immediately and we will do our best

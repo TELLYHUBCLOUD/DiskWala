@@ -3,15 +3,15 @@ import { PageContainer } from "@/components/layout/PageContainer";
 import React from "react";
 
 export const metadata = {
-  title: "DMCA Policy - PlayTerabox",
+  title: "DMCA Policy - TheDiskWala",
   description:
     "Welcome to our DMCA Policy page. Here, we outline our procedures for reporting copyright violations and handling repeat infringements.",
   robots: "index, follow",
   openGraph: {
-    title: "DMCA Policy - PlayTerabox",
+    title: "DMCA Policy - TheDiskWala",
     description: "DMCA Policy page.",
     type: "website",
-    url: "https://playterabox.com/dmca",
+    url: "https://thediskwala.com/dmca",
     images: ["/og.jpg"],
   },
 };

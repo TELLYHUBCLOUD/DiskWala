@@ -214,7 +214,7 @@ const TeraboxScriptSection = () => {
       </p>
         <div className="text-center mt-8">
           <a
-            href="https://playterabox.com/"
+            href="https://thediskwala.com/"
             className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all duration-200 shadow-lg hover:shadow-blue-500/25"
           >
             Play Another Video

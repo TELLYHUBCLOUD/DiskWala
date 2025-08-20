@@ -6,13 +6,10 @@ import { Menu, X } from "lucide-react";
 
 export const links = [
   { name: "Home", slug: "/" },
-  { name: "Terabox Downloader", slug: "/tools/terabox-downloader" },
-  { name: "Terabox Online Player", slug: "/tools/terabox-online-player" },
-  { name: "Diskwala Video Downloader", slug: "/tools/diskwala-video-downloader" },
+  { name: "Terabox Video Downloader", slug: "https://playterabox.com" },
   { name: "About", slug: "/about-us" },
   { name: "Contact", slug: "/contact-us" },
   { name: "DMCA", slug: "/dmca" },
-  { name: "Use our Bot", slug: "https://t.me/TeraboxxVideoDownloaderbot" },
 ];
 
 export function Header() {
@@ -36,11 +33,11 @@ export function Header() {
             onClick={handleHomeClick}
           >
             <img
-              src="/logo.ico"
-              alt="PlayTerabox Logo"
-              className="w-12 h-12"
+              src="/diskwala-logo.png"
+              alt="TheDiskWala Logo"
+              className="w-30 h-12"
             />
-            <span className="text-lg font-bold text-black">PlayTerabox</span>
+            
           </a>
 
           {/* Desktop Navigation */}

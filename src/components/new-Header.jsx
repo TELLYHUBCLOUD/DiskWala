@@ -34,10 +34,10 @@ export function Header() {
           >
             <img
               src="/logo.ico"
-              alt="PlayTerabox Logo"
+              alt="TheDiskWala Logo"
               className="w-12 h-12"
             />
-            <span className="text-lg font-bold text-black">PlayTerabox Blog</span>
+            <span className="text-lg font-bold text-black">TheDiskWala Blog</span>
           </a>
 
           {/* Desktop Navigation */}

@@ -29,8 +29,8 @@ export const metadata = {
     title: "How to Use TeraBox Video Downloader in 2025 to Save Videos Easily",
     description: "Learn how to use a TeraBox video downloader to save videos effortlessly. Follow our step-by-step guide to download, store, and watch TeraBox videos offline anytime!",
     type: "website",
-    url: "https://playterabox.com/blog/how-to-use-terabox-video-downloader-to-save-videos-easily",
-    site_name: "PlayTerabox",
+    url: "https://thediskwala.com/blog/how-to-use-terabox-video-downloader-to-save-videos-easily",
+    site_name: "TheDiskWala",
     images: ["/terabox-downloader.jpg"],
   },
   robots: "index, follow",
@@ -78,7 +78,7 @@ export default function Home() {
       
       <h4 className="text-xl font-semibold mb-2">Step 2: Choose a Reliable Downloader</h4>
       <p className="text-lg text-gray-700 mb-8">
-        There are several TeraBox video downloader tools available online that allow users to fetch and save videos. Make sure to choose a trustworthy and secure downloader that doesn’t compromise video quality or require unnecessary permissions for example Playterabox.com works without ads and login.
+        There are several TeraBox video downloader tools available online that allow users to fetch and save videos. Make sure to choose a trustworthy and secure downloader that doesn’t compromise video quality or require unnecessary permissions for example thediskwala.com works without ads and login.
       </p>
       
       <h4 className="text-xl font-semibold mb-2">Step 3: Paste the Link and Start the Download</h4>
