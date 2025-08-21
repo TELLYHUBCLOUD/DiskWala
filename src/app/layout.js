@@ -20,15 +20,18 @@ export default function RootLayout({ children }) {
         <Analytics />
 
         {/* Google Analytics */}
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLZPLE5MV9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FLZPLE5MV9');
-</script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-FLZPLE5MV9"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FLZPLE5MV9');
+          `}
+        </Script>
 
         {/* Google AdSense */}
         <Script
